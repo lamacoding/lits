@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich | Langwieser IT-Services e.U.</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --light-gray: #e8eaed;
+            --medium-gray: #9aa0a6;
+            --dark-gray: #5f6368;
+            --near-black: #202124;
+
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-nav: rgba(255, 255, 255, 0.9);
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --text-muted: #9aa0a6;
+            --border-color: #e8eaed;
+            --card-bg: #ffffff;
+
+            --google-blue: #4285f4;
+            --google-red: #ea4335;
+            --google-yellow: #fbbc05;
+            --google-green: #34a853;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Instrument Serif', Georgia, serif;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 3rem;
+            --space-xl: 6rem;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #121212;
+            --bg-secondary: #1a1a1a;
+            --bg-nav: rgba(18, 18, 18, 0.95);
+            --text-primary: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --text-muted: #6b7280;
+            --border-color: #3a3a3a;
+            --card-bg: #252525;
+            --off-white: #1a1a1a;
+            --light-gray: #3a3a3a;
+            --near-black: #e8eaed;
+            --white: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Floating accent shapes */
+        .accent-shape {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(80px);
+        }
+
+        .accent-shape.blue {
+            width: 400px;
+            height: 400px;
+            background: var(--google-blue);
+            top: -100px;
+            right: -100px;
+        }
+
+        .accent-shape.green {
+            width: 300px;
+            height: 300px;
+            background: var(--google-green);
+            bottom: 10%;
+            left: -100px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: var(--space-sm) var(--space-md);
+            background: var(--bg-nav);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--google-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .theme-toggle .icon-sun,
+        .theme-toggle .icon-moon {
+            display: none;
+        }
+
+        [data-theme="light"] .theme-toggle .icon-moon,
+        :root:not([data-theme]) .theme-toggle .icon-moon {
+            display: block;
+        }
+
+        [data-theme="dark"] .theme-toggle .icon-sun {
+            display: block;
+        }
+
+        .lang-toggle {
+            display: flex;
+            background: var(--off-white);
+            border-radius: 20px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .lang-toggle button {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 16px;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-toggle button.active {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: calc(80px + var(--space-xl)) var(--space-md) var(--space-xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--google-blue);
+            text-decoration: none;
+            margin-bottom: var(--space-lg);
+            transition: gap 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+        }
+
+        .back-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .about-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        @media (max-width: 640px) {
+            .about-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .profile-picture {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--light-gray) 100%);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-picture .profile-initials {
+            display: none;
+        }
+
+        .profile-picture.placeholder .profile-initials {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--medium-gray);
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--light-gray) 100%);
+        }
+
+        .profile-picture::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 640px) {
+            .profile-picture {
+                margin: 0 auto;
+            }
+        }
+
+        .about-intro h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-xs);
+        }
+
+        .about-intro h1 em {
+            font-style: italic;
+            color: var(--google-blue);
+        }
+
+        .about-intro .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .about-content {
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .about-content p.lead {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+            color: var(--near-black);
+        }
+
+        h2 em {
+            font-style: italic;
+            color: var(--google-red);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--space-md);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--text-primary);
+        }
+
+        .skill-card h3 .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .skill-card:nth-child(1) h3 .dot { background: var(--google-blue); }
+        .skill-card:nth-child(2) h3 .dot { background: var(--google-green); }
+        .skill-card:nth-child(3) h3 .dot { background: var(--google-yellow); }
+        .skill-card:nth-child(4) h3 .dot { background: var(--google-red); }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .values-section {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .values-section h2 {
+            margin-top: 0;
+        }
+
+        .values-list {
+            list-style: none;
+            display: grid;
+            gap: var(--space-sm);
+        }
+
+        .values-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            font-size: 1rem;
+        }
+
+        .values-list .icon {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: var(--space-xl);
+            padding: var(--space-lg);
+            background: var(--near-black);
+            border-radius: 20px;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-top: 0;
+        }
+
+        .cta-section p {
+            color: var(--medium-gray);
+            margin-bottom: var(--space-md);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            background: var(--google-blue);
+            color: var(--white);
+        }
+
+        .btn:hover {
+            background: var(--white);
+            color: var(--near-black);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover svg {
+            transform: translateX(3px);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: var(--space-md);
+            text-align: center;
+            margin-top: var(--space-xl);
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--google-blue);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a:not(.back-link) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="accent-shape blue"></div>
+    <div class="accent-shape green"></div>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Langwieser <span>IT</span></a>
+            <div class="nav-links">
+                <a href="index.html#services" data-i18n="nav.services">Leistungen</a>
+                <a href="about.html" data-i18n="nav.about">Über mich</a>
+                <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+                    </svg>
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                    </svg>
+                </button>
+                <div class="lang-toggle">
+                    <button data-lang="en">EN</button>
+                    <button data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <a href="index.html" class="back-link">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+            <span data-i18n="about.back">Zurück zur Startseite</span>
+        </a>
+
+        <header class="about-header">
+            <div class="profile-picture">
+                <img src="profile.jpg" alt="Matthias Langwieser" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
+                <span class="profile-initials">ML</span>
+            </div>
+            <div class="about-intro">
+                <h1 data-i18n="about.title">Hallo, ich bin <em>Matthias</em></h1>
+                <p class="subtitle" data-i18n="about.subtitle">IT-Consultant & Gründer von Langwieser IT-Services</p>
+            </div>
+        </header>
+
+        <section class="about-content">
+            <p class="lead" data-i18n="about.lead">
+                Ich unterstütze Unternehmen dabei, ihre Arbeitsabläufe zu digitalisieren und zu automatisieren – von komplexen Enterprise-Workflows bis hin zu den ersten Schritten in die digitale Welt.
+            </p>
+            <p data-i18n="about.text1">
+                Meine Leidenschaft für Technologie begann früh. Nach meiner Ausbildung und mehreren Jahren Berufserfahrung in der IT-Branche habe ich mich entschieden, den Schritt in die Selbstständigkeit zu wagen und Langwieser IT-Services zu gründen.
+            </p>
+            <p data-i18n="about.text2">
+                In meiner bisherigen Karriere hatte ich die Möglichkeit, mit Unternehmen verschiedenster Größen und Branchen zusammenzuarbeiten. Dabei habe ich eines gelernt: Die beste Technologie ist die, die man nicht bemerkt – weil sie einfach funktioniert.
+            </p>
+            <p data-i18n="about.text3">
+                Genau das ist mein Ansatz. Ich entwickle Lösungen, die sich nahtlos in bestehende Prozesse einfügen und den Arbeitsalltag spürbar erleichtern. Ohne unnötige Komplexität, ohne Fachchinesisch – dafür mit persönlichem Service und echtem Mehrwert.
+            </p>
+        </section>
+
+        <h2 data-i18n="about.skills.title">Meine <em>Expertise</em></h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><span class="dot"></span> <span data-i18n="about.skills.k2.title">Nintex K2</span></h3>
+                <p data-i18n="about.skills.k2.text">Workflow-Automatisierung und Prozessdigitalisierung für Enterprise-Umgebungen</p>
+            </div>
+            <div class="skill-card">
+                <h3><span class="dot"></span> <span data-i18n="about.skills.power.title">Power Platform</span></h3>
+                <p data-i18n="about.skills.power.text">Power Apps, Power Automate und Power BI für maßgeschneiderte Business-Lösungen</p>
+            </div>
+            <div class="skill-card">
+                <h3><span class="dot"></span> <span data-i18n="about.skills.sql.title">SQL & Datenbanken</span></h3>
+                <p data-i18n="about.skills.sql.text">Datenbankdesign, Optimierung und Reporting mit SQL Server</p>
+            </div>
+            <div class="skill-card">
+                <h3><span class="dot"></span> <span data-i18n="about.skills.consulting.title">IT-Beratung</span></h3>
+                <p data-i18n="about.skills.consulting.text">Strategische Beratung für Digitalisierungsprojekte und Tool-Auswahl</p>
+            </div>
+        </div>
+
+        <div class="values-section">
+            <h2 data-i18n="about.values.title">Wofür ich stehe</h2>
+            <ul class="values-list">
+                <li>
+                    <span class="icon">🎯</span>
+                    <span data-i18n="about.values.item1"><strong>Lösungsorientiert:</strong> Ich fokussiere mich auf das, was wirklich zählt – Ergebnisse, die funktionieren.</span>
+                </li>
+                <li>
+                    <span class="icon">💬</span>
+                    <span data-i18n="about.values.item2"><strong>Klare Kommunikation:</strong> Technologie verständlich erklärt, ohne unnötigen Fachjargon.</span>
+                </li>
+                <li>
+                    <span class="icon">🤝</span>
+                    <span data-i18n="about.values.item3"><strong>Partnerschaftlich:</strong> Ich arbeite mit Ihnen, nicht nur für Sie. Ihr Erfolg ist mein Erfolg.</span>
+                </li>
+                <li>
+                    <span class="icon">🔧</span>
+                    <span data-i18n="about.values.item4"><strong>Pragmatisch:</strong> Die einfachste Lösung ist oft die beste. Kein Overengineering.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h2 data-i18n="about.cta.title">Lassen Sie uns sprechen</h2>
+            <p data-i18n="about.cta.text">Haben Sie ein Projekt im Sinn oder möchten Sie einfach unverbindlich plaudern? Ich freue mich auf Ihre Nachricht.</p>
+            <a href="index.html#contact" class="btn">
+                <span data-i18n="about.cta.button">Kontakt aufnehmen</span>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Langwieser IT-Services e.U. · <a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a></p>
+    </footer>
+
+    <script>
+        // Theme handling
+        function getSystemTheme() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                setTheme(getSystemTheme());
+            }
+        }
+
+        initTheme();
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        const translations = {
+            en: {
+                'nav.services': 'Services',
+                'nav.about': 'About',
+                'nav.contact': 'Contact',
+                'about.back': 'Back to homepage',
+                'about.title': 'Hi, I\'m <em>Matthias</em>',
+                'about.subtitle': 'IT Consultant & Founder of Langwieser IT-Services',
+                'about.lead': 'I help businesses digitize and automate their workflows – from complex enterprise processes to taking the first steps into the digital world.',
+                'about.text1': 'My passion for technology started early. After my education and several years of professional experience in the IT industry, I decided to take the leap into self-employment and founded Langwieser IT-Services.',
+                'about.text2': 'Throughout my career, I\'ve had the opportunity to work with companies of various sizes and industries. I\'ve learned one thing: the best technology is the kind you don\'t notice – because it just works.',
+                'about.text3': 'That\'s exactly my approach. I develop solutions that seamlessly integrate into existing processes and noticeably simplify daily work. Without unnecessary complexity, without jargon – but with personal service and real value.',
+                'about.skills.title': 'My <em>Expertise</em>',
+                'about.skills.k2.title': 'Nintex K2',
+                'about.skills.k2.text': 'Workflow automation and process digitization for enterprise environments',
+                'about.skills.power.title': 'Power Platform',
+                'about.skills.power.text': 'Power Apps, Power Automate and Power BI for tailored business solutions',
+                'about.skills.sql.title': 'SQL & Databases',
+                'about.skills.sql.text': 'Database design, optimization and reporting with SQL Server',
+                'about.skills.consulting.title': 'IT Consulting',
+                'about.skills.consulting.text': 'Strategic consulting for digitization projects and tool selection',
+                'about.values.title': 'What I stand for',
+                'about.values.item1': '<strong>Solution-oriented:</strong> I focus on what really matters – results that work.',
+                'about.values.item2': '<strong>Clear communication:</strong> Technology explained understandably, without unnecessary jargon.',
+                'about.values.item3': '<strong>Partnership:</strong> I work with you, not just for you. Your success is my success.',
+                'about.values.item4': '<strong>Pragmatic:</strong> The simplest solution is often the best. No overengineering.',
+                'about.cta.title': 'Let\'s talk',
+                'about.cta.text': 'Have a project in mind or just want to chat? I look forward to hearing from you.',
+                'about.cta.button': 'Get in touch',
+                'footer.impressum': 'Legal Notice',
+                'footer.privacy': 'Privacy Policy'
+            },
+            de: {
+                'nav.services': 'Leistungen',
+                'nav.about': 'Über mich',
+                'nav.contact': 'Kontakt',
+                'about.back': 'Zurück zur Startseite',
+                'about.title': 'Hallo, ich bin <em>Matthias</em>',
+                'about.subtitle': 'IT-Consultant & Gründer von Langwieser IT-Services',
+                'about.lead': 'Ich unterstütze Unternehmen dabei, ihre Arbeitsabläufe zu digitalisieren und zu automatisieren – von komplexen Enterprise-Workflows bis hin zu den ersten Schritten in die digitale Welt.',
+                'about.text1': 'Meine Leidenschaft für Technologie begann früh. Nach meiner Ausbildung und mehreren Jahren Berufserfahrung in der IT-Branche habe ich mich entschieden, den Schritt in die Selbstständigkeit zu wagen und Langwieser IT-Services zu gründen.',
+                'about.text2': 'In meiner bisherigen Karriere hatte ich die Möglichkeit, mit Unternehmen verschiedenster Größen und Branchen zusammenzuarbeiten. Dabei habe ich eines gelernt: Die beste Technologie ist die, die man nicht bemerkt – weil sie einfach funktioniert.',
+                'about.text3': 'Genau das ist mein Ansatz. Ich entwickle Lösungen, die sich nahtlos in bestehende Prozesse einfügen und den Arbeitsalltag spürbar erleichtern. Ohne unnötige Komplexität, ohne Fachchinesisch – dafür mit persönlichem Service und echtem Mehrwert.',
+                'about.skills.title': 'Meine <em>Expertise</em>',
+                'about.skills.k2.title': 'Nintex K2',
+                'about.skills.k2.text': 'Workflow-Automatisierung und Prozessdigitalisierung für Enterprise-Umgebungen',
+                'about.skills.power.title': 'Power Platform',
+                'about.skills.power.text': 'Power Apps, Power Automate und Power BI für maßgeschneiderte Business-Lösungen',
+                'about.skills.sql.title': 'SQL & Datenbanken',
+                'about.skills.sql.text': 'Datenbankdesign, Optimierung und Reporting mit SQL Server',
+                'about.skills.consulting.title': 'IT-Beratung',
+                'about.skills.consulting.text': 'Strategische Beratung für Digitalisierungsprojekte und Tool-Auswahl',
+                'about.values.title': 'Wofür ich stehe',
+                'about.values.item1': '<strong>Lösungsorientiert:</strong> Ich fokussiere mich auf das, was wirklich zählt – Ergebnisse, die funktionieren.',
+                'about.values.item2': '<strong>Klare Kommunikation:</strong> Technologie verständlich erklärt, ohne unnötigen Fachjargon.',
+                'about.values.item3': '<strong>Partnerschaftlich:</strong> Ich arbeite mit Ihnen, nicht nur für Sie. Ihr Erfolg ist mein Erfolg.',
+                'about.values.item4': '<strong>Pragmatisch:</strong> Die einfachste Lösung ist oft die beste. Kein Overengineering.',
+                'about.cta.title': 'Lassen Sie uns sprechen',
+                'about.cta.text': 'Haben Sie ein Projekt im Sinn oder möchten Sie einfach unverbindlich plaudern? Ich freue mich auf Ihre Nachricht.',
+                'about.cta.button': 'Kontakt aufnehmen',
+                'footer.impressum': 'Impressum',
+                'footer.privacy': 'Datenschutz'
+            }
+        };
+
+        let currentLang = localStorage.getItem('lang') ||
+            (navigator.language.startsWith('de') ? 'de' : 'en');
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+
+        setLanguage(currentLang);
+
+        document.querySelectorAll('.lang-toggle button').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        // Theme toggle
+        document.querySelector('.theme-toggle').addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

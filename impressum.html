@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Langwieser IT-Services e.U.</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --light-gray: #e8eaed;
+            --medium-gray: #9aa0a6;
+            --dark-gray: #5f6368;
+            --near-black: #202124;
+
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-nav: rgba(255, 255, 255, 0.9);
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --text-muted: #9aa0a6;
+            --border-color: #e8eaed;
+            --card-bg: #ffffff;
+
+            --google-blue: #4285f4;
+            --google-red: #ea4335;
+            --google-yellow: #fbbc05;
+            --google-green: #34a853;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Instrument Serif', Georgia, serif;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 3rem;
+            --space-xl: 6rem;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #121212;
+            --bg-secondary: #1a1a1a;
+            --bg-nav: rgba(18, 18, 18, 0.95);
+            --text-primary: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --text-muted: #6b7280;
+            --border-color: #3a3a3a;
+            --card-bg: #252525;
+            --off-white: #1a1a1a;
+            --light-gray: #3a3a3a;
+            --near-black: #e8eaed;
+            --white: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: var(--space-sm) var(--space-md);
+            background: var(--bg-nav);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--google-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .theme-toggle .icon-sun,
+        .theme-toggle .icon-moon {
+            display: none;
+        }
+
+        [data-theme="light"] .theme-toggle .icon-moon,
+        :root:not([data-theme]) .theme-toggle .icon-moon {
+            display: block;
+        }
+
+        [data-theme="dark"] .theme-toggle .icon-sun {
+            display: block;
+        }
+
+        .lang-toggle {
+            display: flex;
+            background: var(--off-white);
+            border-radius: 20px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .lang-toggle button {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 16px;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-toggle button.active {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: calc(80px + var(--space-xl)) var(--space-md) var(--space-xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--google-blue);
+            text-decoration: none;
+            margin-bottom: var(--space-lg);
+            transition: gap 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+        }
+
+        .back-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-lg);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+            color: var(--near-black);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+
+        a {
+            color: var(--google-blue);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .info-block {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .info-block p {
+            margin-bottom: 4px;
+        }
+
+        .info-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-block strong {
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: var(--space-md);
+            text-align: center;
+            margin-top: var(--space-xl);
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--google-blue);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a:not(.back-link) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Langwieser <span>IT</span></a>
+            <div class="nav-links">
+                <a href="index.html#services" data-i18n="nav.services">Leistungen</a>
+                <a href="about.html" data-i18n="nav.about">Über mich</a>
+                <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+                    </svg>
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                    </svg>
+                </button>
+                <div class="lang-toggle">
+                    <button data-lang="en">EN</button>
+                    <button data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <a href="index.html" class="back-link">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+            <span data-i18n="impressum.back">Zurück zur Startseite</span>
+        </a>
+
+        <h1 data-i18n="impressum.title">Impressum</h1>
+
+        <div class="info-block">
+            <p><strong>Langwieser IT-Services e.U.</strong></p>
+            <p>Matthias Langwieser</p>
+            <p>Ulrichstraße 22</p>
+            <p>4400 Sankt Ulrich bei Steyr</p>
+            <p>Österreich</p>
+        </div>
+
+        <h2 data-i18n="impressum.contact">Kontakt</h2>
+        <div class="info-block">
+            <p><strong>E-Mail:</strong> <a href="mailto:matthias@langwieser-its.at">matthias@langwieser-its.at</a></p>
+        </div>
+
+        <h2 data-i18n="impressum.legal">Unternehmensgegenstand</h2>
+        <p data-i18n="impressum.legal.text">IT-Dienstleistungen, Beratung und Implementierung</p>
+
+        <h2 data-i18n="impressum.uid">UID-Nummer</h2>
+        <p data-i18n="impressum.uid.text">In Beantragung / wird ergänzt</p>
+
+        <h2 data-i18n="impressum.authority">Aufsichtsbehörde</h2>
+        <p data-i18n="impressum.authority.text">Bezirkshauptmannschaft Steyr-Land</p>
+
+        <h2 data-i18n="impressum.membership">Mitgliedschaft</h2>
+        <p data-i18n="impressum.membership.text">Wirtschaftskammer Oberösterreich</p>
+
+        <h2 data-i18n="impressum.regulations">Anwendbare Rechtsvorschriften</h2>
+        <p data-i18n="impressum.regulations.text">Gewerbeordnung: <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a></p>
+
+        <h2 data-i18n="impressum.dispute">Streitschlichtung</h2>
+        <p data-i18n="impressum.dispute.text">
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
+            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+
+        <h2 data-i18n="impressum.liability">Haftung für Inhalte</h2>
+        <p data-i18n="impressum.liability.text">
+            Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2025 Langwieser IT-Services e.U. · <a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a></p>
+    </footer>
+
+    <script>
+        // Theme handling
+        function getSystemTheme() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                setTheme(getSystemTheme());
+            }
+        }
+
+        initTheme();
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        const translations = {
+            en: {
+                'nav.services': 'Services',
+                'nav.about': 'About',
+                'nav.contact': 'Contact',
+                'impressum.back': 'Back to homepage',
+                'impressum.title': 'Legal Notice',
+                'impressum.contact': 'Contact',
+                'impressum.legal': 'Business Purpose',
+                'impressum.legal.text': 'IT services, consulting and implementation',
+                'impressum.uid': 'VAT ID',
+                'impressum.uid.text': 'In application / to be added',
+                'impressum.authority': 'Supervisory Authority',
+                'impressum.authority.text': 'District Authority Steyr-Land',
+                'impressum.membership': 'Membership',
+                'impressum.membership.text': 'Chamber of Commerce Upper Austria',
+                'impressum.regulations': 'Applicable Regulations',
+                'impressum.regulations.text': 'Trade Regulations: <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a>',
+                'impressum.dispute': 'Dispute Resolution',
+                'impressum.dispute.text': 'The European Commission provides a platform for online dispute resolution (ODR): <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>. We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.',
+                'impressum.liability': 'Liability for Content',
+                'impressum.liability.text': 'The contents of this website have been created with the utmost care. However, no guarantee can be given for the accuracy, completeness and timeliness of the content.',
+                'footer.impressum': 'Legal Notice',
+                'footer.privacy': 'Privacy Policy'
+            },
+            de: {
+                'nav.services': 'Leistungen',
+                'nav.about': 'Über mich',
+                'nav.contact': 'Kontakt',
+                'impressum.back': 'Zurück zur Startseite',
+                'impressum.title': 'Impressum',
+                'impressum.contact': 'Kontakt',
+                'impressum.legal': 'Unternehmensgegenstand',
+                'impressum.legal.text': 'IT-Dienstleistungen, Beratung und Implementierung',
+                'impressum.uid': 'UID-Nummer',
+                'impressum.uid.text': 'In Beantragung / wird ergänzt',
+                'impressum.authority': 'Aufsichtsbehörde',
+                'impressum.authority.text': 'Bezirkshauptmannschaft Steyr-Land',
+                'impressum.membership': 'Mitgliedschaft',
+                'impressum.membership.text': 'Wirtschaftskammer Oberösterreich',
+                'impressum.regulations': 'Anwendbare Rechtsvorschriften',
+                'impressum.regulations.text': 'Gewerbeordnung: <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a>',
+                'impressum.dispute': 'Streitschlichtung',
+                'impressum.dispute.text': 'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
+                'impressum.liability': 'Haftung für Inhalte',
+                'impressum.liability.text': 'Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.',
+                'footer.impressum': 'Impressum',
+                'footer.privacy': 'Datenschutz'
+            }
+        };
+
+        let currentLang = localStorage.getItem('lang') ||
+            (navigator.language.startsWith('de') ? 'de' : 'en');
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+
+        setLanguage(currentLang);
+
+        document.querySelectorAll('.lang-toggle button').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        // Theme toggle
+        document.querySelector('.theme-toggle').addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

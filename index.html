@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langwieser IT-Services e.U.</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --light-gray: #e8eaed;
+            --medium-gray: #9aa0a6;
+            --dark-gray: #5f6368;
+            --near-black: #202124;
+
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-nav: rgba(255, 255, 255, 0.9);
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --text-muted: #9aa0a6;
+            --border-color: #e8eaed;
+            --card-bg: #ffffff;
+            --input-bg: rgba(255, 255, 255, 0.05);
+
+            --google-blue: #4285f4;
+            --google-red: #ea4335;
+            --google-yellow: #fbbc05;
+            --google-green: #34a853;
+
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Instrument Serif', Georgia, serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 3rem;
+            --space-xl: 6rem;
+            --space-2xl: 10rem;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #121212;
+            --bg-secondary: #1a1a1a;
+            --bg-nav: rgba(18, 18, 18, 0.95);
+            --text-primary: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --text-muted: #6b7280;
+            --border-color: #3a3a3a;
+            --card-bg: #252525;
+            --input-bg: rgba(255, 255, 255, 0.08);
+            --off-white: #1a1a1a;
+            --light-gray: #3a3a3a;
+            --near-black: #e8eaed;
+            --white: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Floating accent shapes */
+        .accent-shape {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(80px);
+        }
+
+        .accent-shape.blue {
+            width: 500px;
+            height: 500px;
+            background: var(--google-blue);
+            top: -100px;
+            right: -100px;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .accent-shape.red {
+            width: 400px;
+            height: 400px;
+            background: var(--google-red);
+            bottom: 20%;
+            left: -150px;
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        .accent-shape.green {
+            width: 350px;
+            height: 350px;
+            background: var(--google-green);
+            bottom: -100px;
+            right: 20%;
+            animation: float3 22s ease-in-out infinite;
+        }
+
+        .accent-shape.yellow {
+            width: 300px;
+            height: 300px;
+            background: var(--google-yellow);
+            top: 40%;
+            right: -100px;
+            animation: float1 18s ease-in-out infinite reverse;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-25px, 25px) scale(1.03); }
+            66% { transform: translate(35px, -15px) scale(0.97); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, -40px) scale(1.04); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: var(--space-sm) var(--space-md);
+            background: var(--bg-nav);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav.scrolled {
+            border-bottom-color: var(--border-color);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--google-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--google-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .theme-toggle .icon-sun,
+        .theme-toggle .icon-moon {
+            display: none;
+        }
+
+        [data-theme="light"] .theme-toggle .icon-moon,
+        :root:not([data-theme]) .theme-toggle .icon-moon {
+            display: block;
+        }
+
+        [data-theme="dark"] .theme-toggle .icon-sun {
+            display: block;
+        }
+
+        .lang-toggle {
+            display: flex;
+            background: var(--off-white);
+            border-radius: 20px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .lang-toggle button {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 16px;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-toggle button.active {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-toggle button:hover:not(.active) {
+            color: var(--text-primary);
+        }
+
+        /* Sections */
+        section {
+            padding: var(--space-xl) var(--space-md);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: var(--space-2xl);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .hero-label .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--google-green);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.9); }
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-md);
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.1s forwards;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--google-blue);
+        }
+
+        .hero-text {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 550px;
+            margin-bottom: var(--space-lg);
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-group {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.3s forwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--google-blue);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(66, 133, 244, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* Services */
+        .services {
+            background: var(--bg-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--google-blue);
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--card-accent, var(--google-blue));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-card.enterprise { --card-accent: var(--google-blue); }
+        .service-card.small-biz { --card-accent: var(--google-green); }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-md);
+            background: var(--off-white);
+        }
+
+        .service-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--card-accent, var(--google-blue));
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .service-card:hover .tech-tag {
+            background: rgba(66, 133, 244, 0.1);
+            color: var(--google-blue);
+        }
+
+        .service-card.small-biz:hover .tech-tag {
+            background: rgba(52, 168, 83, 0.1);
+            color: var(--google-green);
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .about-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-picture {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--light-gray) 100%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-picture .profile-initials {
+            display: none;
+        }
+
+        .profile-picture.placeholder .profile-initials {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: var(--text-muted);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border-color) 100%);
+        }
+
+        .profile-picture::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-decoration {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--near-black);
+        }
+
+        .about-decoration.top-right {
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: var(--google-yellow);
+            border-radius: 50%;
+            animation: float1 6s ease-in-out infinite;
+        }
+
+        .about-decoration.bottom-left {
+            bottom: -15px;
+            left: -15px;
+            width: 60px;
+            height: 60px;
+            background: var(--google-blue);
+            border-radius: 12px;
+            animation: float2 5s ease-in-out infinite;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-md);
+        }
+
+        .about-content h2 em {
+            font-style: italic;
+            color: var(--google-red);
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+            font-size: 1.05rem;
+        }
+
+        .values-list {
+            list-style: none;
+            margin-top: var(--space-md);
+        }
+
+        .values-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            font-size: 0.95rem;
+        }
+
+        .values-list .check {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            background: rgba(52, 168, 83, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .values-list .check svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--google-green);
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--near-black);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--google-blue) 0%, transparent 70%);
+            opacity: 0.1;
+        }
+
+        .contact .section-label {
+            color: var(--google-yellow);
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .contact-details li svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--google-blue);
+        }
+
+        .contact-details a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--google-blue);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 16px 20px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #9aa0a6;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--google-blue);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        [data-theme="dark"] .contact-form input,
+        [data-theme="dark"] .contact-form textarea {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            color: #202124;
+        }
+
+        [data-theme="dark"] .contact-form input::placeholder,
+        [data-theme="dark"] .contact-form textarea::placeholder {
+            color: #5f6368;
+        }
+
+        [data-theme="dark"] .contact-form input:focus,
+        [data-theme="dark"] .contact-form textarea:focus {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: var(--google-blue);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .btn-primary {
+            align-self: flex-start;
+            background: var(--google-blue);
+            color: #ffffff;
+        }
+
+        .contact-form .btn-primary:hover {
+            background: #202124;
+            color: #ffffff;
+        }
+
+        [data-theme="dark"] .contact-form .btn-primary:hover {
+            background: #202124;
+            color: #ffffff;
+        }
+
+        [data-theme="dark"] .contact .section-label {
+            color: var(--google-blue);
+        }
+
+        [data-theme="dark"] .contact .section-title {
+            color: #202124;
+        }
+
+        [data-theme="dark"] .contact-info h3 {
+            color: #202124;
+        }
+
+        [data-theme="dark"] .contact-info p {
+            color: #5f6368;
+        }
+
+        [data-theme="dark"] .contact-details a,
+        [data-theme="dark"] .contact-details span {
+            color: #202124;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--near-black);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: var(--space-md);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--google-blue);
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: var(--space-md);
+                gap: var(--space-sm);
+                border-bottom: 1px solid var(--border-color);
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .nav-links a {
+                padding: var(--space-xs) 0;
+            }
+
+            section {
+                padding: var(--space-lg) var(--space-sm);
+            }
+
+            .hero {
+                padding-top: var(--space-xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating accent shapes -->
+    <div class="accent-shape blue"></div>
+    <div class="accent-shape red"></div>
+    <div class="accent-shape green"></div>
+    <div class="accent-shape yellow"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="logo">Langwieser <span>IT</span></a>
+
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <div class="nav-links">
+                <a href="#services" data-i18n="nav.services">Services</a>
+                <a href="about.html" data-i18n="nav.about">About</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+                    </svg>
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                    </svg>
+                </button>
+                <div class="lang-toggle">
+                    <button data-lang="en">EN</button>
+                    <button data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">
+                    <span class="dot"></span>
+                    <span data-i18n="hero.label">Available for new projects</span>
+                </div>
+                <h1 data-i18n="hero.title">Technology that works <em>for</em> your business</h1>
+                <p class="hero-text" data-i18n="hero.text">
+                    I help enterprises optimize their workflows with Nintex K2 & Power Platform, and guide small businesses on their digitalization journey. Personal service, real results.
+                </p>
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-primary">
+                        <span data-i18n="hero.cta">Let's talk</span>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                    <a href="#services" class="btn btn-secondary" data-i18n="hero.cta2">View services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label" data-i18n="services.label">What I offer</p>
+                <h2 class="section-title" data-i18n="services.title">Solutions for every scale</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card enterprise fade-in">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="services.enterprise.title">Enterprise Solutions</h3>
+                    <p data-i18n="services.enterprise.text">Streamline complex business processes with intelligent automation. From workflow design to database optimization, I help large organizations work smarter.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Nintex K2</span>
+                        <span class="tech-tag">Power Platform</span>
+                        <span class="tech-tag">Power Automate</span>
+                        <span class="tech-tag">SQL Server</span>
+                    </div>
+                </div>
+
+                <div class="service-card small-biz fade-in">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="services.smallbiz.title">Digital Kickstart</h3>
+                    <p data-i18n="services.smallbiz.text">Ready to go digital but not sure where to start? I'll help you identify the right tools and build simple, effective solutions that grow with your business.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag" data-i18n="services.smallbiz.tag1">Process Analysis</span>
+                        <span class="tech-tag" data-i18n="services.smallbiz.tag2">Tool Selection</span>
+                        <span class="tech-tag" data-i18n="services.smallbiz.tag3">Implementation</span>
+                        <span class="tech-tag" data-i18n="services.smallbiz.tag4">Training</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual fade-in">
+                    <div class="profile-picture">
+                        <img src="profile.jpg" alt="Matthias Langwieser" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
+                        <span class="profile-initials">ML</span>
+                    </div>
+                    <div class="about-decoration top-right">✦</div>
+                    <div class="about-decoration bottom-left"></div>
+                </div>
+                <div class="about-content fade-in">
+                    <h2 data-i18n="about.title">Fresh perspective, <em>proven</em> skills</h2>
+                    <p data-i18n="about.text1">
+                        After gaining hands-on experience working with enterprise clients on complex automation and data projects, I founded Langwieser IT-Services to bring that expertise directly to businesses of all sizes.
+                    </p>
+                    <p data-i18n="about.text2">
+                        As a solo consultant, you get my full attention on your project—no handoffs, no miscommunication. Just direct collaboration and solutions tailored to your needs.
+                    </p>
+                    <ul class="values-list">
+                        <li>
+                            <span class="check">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span data-i18n="about.value1">Direct communication, no corporate overhead</span>
+                        </li>
+                        <li>
+                            <span class="check">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span data-i18n="about.value2">Flexible engagement—from quick consultations to full projects</span>
+                        </li>
+                        <li>
+                            <span class="check">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span data-i18n="about.value3">Based in Austria, working remotely across Europe</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label" data-i18n="contact.label">Get in touch</p>
+                <h2 class="section-title" data-i18n="contact.title">Let's build something great</h2>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3 data-i18n="contact.info.title">Ready to optimize your workflows?</h3>
+                    <p data-i18n="contact.info.text">
+                        Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you. Let's discuss how I can help.
+                    </p>
+                    <ul class="contact-details">
+                        <li>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                            </svg>
+                            <a href="mailto:matthias@langwieser-its.at">matthias@langwieser-its.at</a>
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                            </svg>
+                            <span data-i18n="contact.location">Ulrichstraße 22, 4400 Sankt Ulrich bei Steyr, Austria</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <form class="contact-form fade-in" action="https://formspree.io/f/mykkgezk" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" required data-i18n-placeholder="contact.form.name" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" required data-i18n-placeholder="contact.form.email" placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" required data-i18n-placeholder="contact.form.message" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-text" data-i18n="contact.form.submit">Send message</span>
+                        <span class="btn-loading" style="display: none;" data-i18n="contact.form.sending">Sending...</span>
+                        <svg class="btn-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+                        </svg>
+                        <svg class="btn-spinner" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" stroke-opacity="0.25"/>
+                            <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round">
+                                <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="form-status" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 12px;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Langwieser IT-Services e.U. · <a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a></p>
+    </footer>
+
+    <script>
+        // Theme handling
+        function getSystemTheme() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                setTheme(getSystemTheme());
+            }
+        }
+
+        // Initialize theme immediately to prevent flash
+        initTheme();
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // Translations
+        const translations = {
+            en: {
+                'nav.services': 'Services',
+                'nav.about': 'About',
+                'nav.contact': 'Contact',
+                'hero.label': 'Available for new projects',
+                'hero.title': 'Technology that works <em>for</em> your business',
+                'hero.text': 'I help enterprises optimize their workflows with Nintex K2 & Power Platform, and guide small businesses on their digitalization journey. Personal service, real results.',
+                'hero.cta': "Let's talk",
+                'hero.cta2': 'View services',
+                'services.label': 'What I offer',
+                'services.title': 'Solutions for every scale',
+                'services.enterprise.title': 'Enterprise Solutions',
+                'services.enterprise.text': 'Streamline complex business processes with intelligent automation. From workflow design to database optimization, I help large organizations work smarter.',
+                'services.smallbiz.title': 'Digital Kickstart',
+                'services.smallbiz.text': "Ready to go digital but not sure where to start? I'll help you identify the right tools and build simple, effective solutions that grow with your business.",
+                'services.smallbiz.tag1': 'Process Analysis',
+                'services.smallbiz.tag2': 'Tool Selection',
+                'services.smallbiz.tag3': 'Implementation',
+                'services.smallbiz.tag4': 'Training',
+                'about.title': 'Fresh perspective, <em>proven</em> skills',
+                'about.text1': 'After gaining hands-on experience working with enterprise clients on complex automation and data projects, I founded Langwieser IT-Services to bring that expertise directly to businesses of all sizes.',
+                'about.text2': "As a solo consultant, you get my full attention on your project—no handoffs, no miscommunication. Just direct collaboration and solutions tailored to your needs.",
+                'about.value1': 'Direct communication, no corporate overhead',
+                'about.value2': 'Flexible engagement—from quick consultations to full projects',
+                'about.value3': 'Based in Austria, working remotely across Europe',
+                'contact.label': 'Get in touch',
+                'contact.title': "Let's build something great",
+                'contact.info.title': 'Ready to optimize your workflows?',
+                'contact.info.text': "Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you. Let's discuss how I can help.",
+                'contact.location': 'Ulrichstraße 22, 4400 Sankt Ulrich bei Steyr, Austria',
+                'contact.form.name': 'Your name',
+                'contact.form.email': 'Your email',
+                'contact.form.message': 'Tell me about your project...',
+                'contact.form.submit': 'Send message',
+                'contact.form.sending': 'Sending...',
+                'footer.impressum': 'Legal Notice',
+                'footer.privacy': 'Privacy Policy'
+            },
+            de: {
+                'nav.services': 'Leistungen',
+                'nav.about': 'Über mich',
+                'nav.contact': 'Kontakt',
+                'hero.label': 'Verfügbar für neue Projekte',
+                'hero.title': 'Technologie, die <em>für</em> Ihr Unternehmen arbeitet',
+                'hero.text': 'Ich helfe Unternehmen, ihre Arbeitsabläufe mit Nintex K2 & Power Platform zu optimieren, und begleite kleine Betriebe auf ihrem Weg in die Digitalisierung. Persönlicher Service, echte Ergebnisse.',
+                'hero.cta': 'Sprechen wir',
+                'hero.cta2': 'Leistungen ansehen',
+                'services.label': 'Mein Angebot',
+                'services.title': 'Lösungen für jede Größe',
+                'services.enterprise.title': 'Enterprise-Lösungen',
+                'services.enterprise.text': 'Komplexe Geschäftsprozesse mit intelligenter Automatisierung optimieren. Von Workflow-Design bis Datenbankoptimierung – ich helfe großen Organisationen, effizienter zu arbeiten.',
+                'services.smallbiz.title': 'Digital Durchstarten',
+                'services.smallbiz.text': 'Bereit für die Digitalisierung, aber unsicher wo anfangen? Ich helfe Ihnen, die richtigen Tools zu finden und einfache, effektive Lösungen zu entwickeln, die mit Ihrem Unternehmen wachsen.',
+                'services.smallbiz.tag1': 'Prozessanalyse',
+                'services.smallbiz.tag2': 'Tool-Auswahl',
+                'services.smallbiz.tag3': 'Umsetzung',
+                'services.smallbiz.tag4': 'Schulung',
+                'about.title': 'Frischer Blick, <em>bewährte</em> Kompetenz',
+                'about.text1': 'Nach praktischer Erfahrung in der Arbeit mit Enterprise-Kunden an komplexen Automatisierungs- und Datenprojekten habe ich Langwieser IT-Service gegründet, um diese Expertise direkt zu Unternehmen jeder Größe zu bringen.',
+                'about.text2': 'Als Einzelunternehmer bekommen Sie meine volle Aufmerksamkeit für Ihr Projekt – keine Übergaben, keine Missverständnisse. Nur direkte Zusammenarbeit und Lösungen, die auf Ihre Bedürfnisse zugeschnitten sind.',
+                'about.value1': 'Direkte Kommunikation, kein Konzern-Overhead',
+                'about.value2': 'Flexible Zusammenarbeit – von kurzen Beratungen bis zu ganzen Projekten',
+                'about.value3': 'Standort Österreich, remote tätig in ganz Europa',
+                'contact.label': 'Kontakt aufnehmen',
+                'contact.title': 'Lassen Sie uns etwas Großartiges bauen',
+                'contact.info.title': 'Bereit, Ihre Arbeitsabläufe zu optimieren?',
+                'contact.info.text': 'Ob Sie ein konkretes Projekt im Sinn haben oder einfach Möglichkeiten erkunden möchten – ich freue mich von Ihnen zu hören. Lassen Sie uns besprechen, wie ich helfen kann.',
+                'contact.location': 'Ulrichstraße 22, 4400 Sankt Ulrich bei Steyr, Österreich',
+                'contact.form.name': 'Ihr Name',
+                'contact.form.email': 'Ihre E-Mail',
+                'contact.form.message': 'Erzählen Sie mir von Ihrem Projekt...',
+                'contact.form.submit': 'Nachricht senden',
+                'contact.form.sending': 'Wird gesendet...',
+                'footer.impressum': 'Impressum',
+                'footer.privacy': 'Datenschutz'
+            }
+        };
+
+        // Language handling
+        let currentLang = localStorage.getItem('lang') ||
+            (navigator.language.startsWith('de') ? 'de' : 'en');
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.documentElement.lang = lang;
+
+            // Update text content
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+
+            // Update toggle buttons
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+
+        // Initialize language
+        setLanguage(currentLang);
+
+        // Language toggle event listeners
+        document.querySelectorAll('.lang-toggle button').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        // Theme toggle event listener
+        document.querySelector('.theme-toggle').addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        // Navigation scroll effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Form submission with Formspree
+        const contactForm = document.querySelector('.contact-form');
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        const btnIcon = submitBtn.querySelector('.btn-icon');
+        const btnSpinner = submitBtn.querySelector('.btn-spinner');
+        const formStatus = contactForm.querySelector('.form-status');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            btnIcon.style.display = 'none';
+            btnSpinner.style.display = 'inline';
+            submitBtn.disabled = true;
+            formStatus.style.display = 'none';
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Success
+                    formStatus.style.display = 'block';
+                    formStatus.style.background = 'rgba(52, 168, 83, 0.15)';
+                    formStatus.style.color = '#34a853';
+                    formStatus.textContent = currentLang === 'de'
+                        ? 'Danke für Ihre Nachricht! Ich melde mich bald bei Ihnen.'
+                        : 'Thank you for your message! I\'ll get back to you soon.';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Error
+                formStatus.style.display = 'block';
+                formStatus.style.background = 'rgba(234, 67, 53, 0.15)';
+                formStatus.style.color = '#ea4335';
+                formStatus.textContent = currentLang === 'de'
+                    ? 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt eine E-Mail.'
+                    : 'Something went wrong. Please try again or email me directly.';
+            } finally {
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                btnIcon.style.display = 'inline';
+                btnSpinner.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
