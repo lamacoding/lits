@@ -785,6 +785,7 @@ section {
     font-size: 1.75rem;
     font-weight: 400;
     margin-bottom: var(--space-md);
+    color: var(--white);
 }
 
 .contact-info p {
