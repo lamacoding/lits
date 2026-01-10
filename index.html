@@ -11,49 +11,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Floating accent shapes -->
-    <div class="accent-shape blue"></div>
-    <div class="accent-shape red"></div>
-    <div class="accent-shape green"></div>
-    <div class="accent-shape yellow"></div>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Floating accent shapes (decorative) -->
+    <div class="accent-shape blue" aria-hidden="true"></div>
+    <div class="accent-shape red" aria-hidden="true"></div>
+    <div class="accent-shape green" aria-hidden="true"></div>
+    <div class="accent-shape yellow" aria-hidden="true"></div>
 
     <!-- Navigation -->
     <nav>
         <div class="nav-inner">
             <a href="#" class="logo">Langwieser <span>IT-Services</span></a>
 
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
 
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="#services" data-i18n="nav.services">Services</a>
                 <a href="about.html" data-i18n="nav.about">About</a>
                 <a href="#contact" data-i18n="nav.contact">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
                     </svg>
-                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
                     </svg>
                 </button>
-                <div class="lang-toggle">
-                    <button data-lang="en">EN</button>
-                    <button data-lang="de">DE</button>
+                <div class="lang-toggle" role="group" aria-label="Language selection">
+                    <button data-lang="en" aria-pressed="false">EN</button>
+                    <button data-lang="de" aria-pressed="false">DE</button>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-label">
-                    <span class="dot"></span>
+                    <span class="dot" aria-hidden="true"></span>
                     <span data-i18n="hero.label">Available for new projects</span>
                 </div>
                 <h1 data-i18n="hero.title">Technology that works <em>for</em> your business</h1>
@@ -63,7 +67,7 @@
                 <div class="cta-group">
                     <a href="#contact" class="btn btn-primary">
                         <span data-i18n="hero.cta">Let's talk</span>
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
@@ -84,7 +88,7 @@
             <div class="services-grid">
                 <div class="service-card enterprise fade-in">
                     <div class="service-icon">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/>
                         </svg>
                     </div>
@@ -100,7 +104,7 @@
 
                 <div class="service-card small-biz fade-in">
                     <div class="service-icon">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
                         </svg>
                     </div>
@@ -123,11 +127,11 @@
             <div class="about-grid">
                 <div class="about-visual fade-in">
                     <div class="profile-picture">
-                        <img src="profile.jpg" alt="Matthias Langwieser" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
-                        <span class="profile-initials">ML</span>
+                        <img src="profile.jpg" alt="Matthias Langwieser, IT Consultant" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
+                        <span class="profile-initials" aria-hidden="true">ML</span>
                     </div>
-                    <div class="about-decoration top-right">✦</div>
-                    <div class="about-decoration bottom-left"></div>
+                    <div class="about-decoration top-right" aria-hidden="true">✦</div>
+                    <div class="about-decoration bottom-left" aria-hidden="true"></div>
                 </div>
                 <div class="about-content fade-in">
                     <h2 data-i18n="about.title">Fresh perspective, <em>proven</em> skills</h2>
@@ -139,7 +143,7 @@
                     </p>
                     <ul class="values-list">
                         <li>
-                            <span class="check">
+                            <span class="check" aria-hidden="true">
                                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                                 </svg>
@@ -147,7 +151,7 @@
                             <span data-i18n="about.value1">Direct communication, no corporate overhead</span>
                         </li>
                         <li>
-                            <span class="check">
+                            <span class="check" aria-hidden="true">
                                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                                 </svg>
@@ -155,7 +159,7 @@
                             <span data-i18n="about.value2">Flexible engagement—from quick consultations to full projects</span>
                         </li>
                         <li>
-                            <span class="check">
+                            <span class="check" aria-hidden="true">
                                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                                 </svg>
@@ -184,13 +188,13 @@
                     </p>
                     <ul class="contact-details">
                         <li>
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
                             </svg>
                             <a href="mailto:matthias@langwieser-its.at">matthias@langwieser-its.at</a>
                         </li>
                         <li>
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
                             </svg>
@@ -201,32 +205,36 @@
 
                 <form class="contact-form fade-in" action="https://formspree.io/f/mykkgezk" method="POST">
                     <div class="form-group">
-                        <input type="text" name="name" required data-i18n-placeholder="contact.form.name" placeholder="Your name">
+                        <label for="contact-name" class="visually-hidden" data-i18n="contact.form.name">Your name</label>
+                        <input type="text" id="contact-name" name="name" required autocomplete="name" data-i18n-placeholder="contact.form.name" placeholder="Your name">
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" required data-i18n-placeholder="contact.form.email" placeholder="Your email">
+                        <label for="contact-email" class="visually-hidden" data-i18n="contact.form.email">Your email</label>
+                        <input type="email" id="contact-email" name="email" required autocomplete="email" data-i18n-placeholder="contact.form.email" placeholder="Your email">
                     </div>
                     <div class="form-group">
-                        <textarea name="message" required data-i18n-placeholder="contact.form.message" placeholder="Tell me about your project..."></textarea>
+                        <label for="contact-message" class="visually-hidden" data-i18n="contact.form.message">Tell me about your project...</label>
+                        <textarea id="contact-message" name="message" required data-i18n-placeholder="contact.form.message" placeholder="Tell me about your project..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">
                         <span class="btn-text" data-i18n="contact.form.submit">Send message</span>
                         <span class="btn-loading" style="display: none;" data-i18n="contact.form.sending">Sending...</span>
-                        <svg class="btn-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
                         </svg>
-                        <svg class="btn-spinner" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="btn-spinner" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <circle cx="12" cy="12" r="10" stroke-opacity="0.25"/>
                             <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round">
                                 <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
                             </path>
                         </svg>
                     </button>
-                    <div class="form-status" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 12px;"></div>
+                    <div class="form-status" role="status" aria-live="polite" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 12px;"></div>
                 </form>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>

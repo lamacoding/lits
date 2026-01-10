@@ -11,33 +11,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-inner">
             <a href="index.html" class="logo">Langwieser <span>IT-Services</span></a>
-            <div class="nav-links">
+
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <div class="nav-links" id="nav-links">
                 <a href="index.html#services" data-i18n="nav.services">Leistungen</a>
                 <a href="about.html" data-i18n="nav.about">Über mich</a>
                 <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
                     </svg>
-                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
                     </svg>
                 </button>
-                <div class="lang-toggle">
-                    <button data-lang="en">EN</button>
-                    <button data-lang="de">DE</button>
+                <div class="lang-toggle" role="group" aria-label="Language selection">
+                    <button data-lang="en" aria-pressed="false">EN</button>
+                    <button data-lang="de" aria-pressed="false">DE</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
         <a href="index.html" class="back-link">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
             </svg>
             <span data-i18n="impressum.back">Zurück zur Startseite</span>
