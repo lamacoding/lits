@@ -249,6 +249,32 @@ nav.scrolled {
     width: 100%;
 }
 
+.linkedin-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.linkedin-link::after {
+    display: none !important;
+}
+
+.linkedin-link:hover {
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+.linkedin-link svg {
+    width: 20px;
+    height: 20px;
+}
+
 .theme-toggle {
     width: 40px;
     height: 40px;
@@ -1344,6 +1370,11 @@ button:focus-visible {
 }
 
 .theme-toggle:focus-visible {
+    outline: 2px solid var(--google-blue);
+    outline-offset: 2px;
+}
+
+.linkedin-link:focus-visible {
     outline: 2px solid var(--google-blue);
     outline-offset: 2px;
 }
