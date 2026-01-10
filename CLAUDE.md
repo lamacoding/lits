@@ -69,7 +69,10 @@ The site follows WCAG 2.1 AA standards with the following implementations:
 
 **Content Readability:**
 - Increased max-width to 1400px for better readability
-- Sufficient color contrast in both light and dark themes
+- WCAG AA compliant color contrast ratios (4.5:1 minimum for normal text)
+- Accessible text color variants (`--google-*-text`) for Google brand colors used as text
+- Proper contrast in contact section with dark background
+- H1 appears first in DOM structure before other content (visual order maintained with flexbox)
 - Smooth scroll behavior with `scroll-behavior: smooth`
 
 ## Development

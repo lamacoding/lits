@@ -11,7 +11,7 @@
     --bg-nav: rgba(255, 255, 255, 0.9);
     --text-primary: #202124;
     --text-secondary: #5f6368;
-    --text-muted: #9aa0a6;
+    --text-muted: #6b7280;
     --border-color: #e8eaed;
     --card-bg: #ffffff;
     --input-bg: rgba(255, 255, 255, 0.05);
@@ -20,6 +20,12 @@
     --google-red: #ea4335;
     --google-yellow: #fbbc05;
     --google-green: #34a853;
+
+    /* Accessible text versions (WCAG AA compliant) */
+    --google-blue-text: #1a73e8;
+    --google-red-text: #d93025;
+    --google-yellow-text: #c5970a;
+    --google-green-text: #188038;
 
     --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-display: 'Instrument Serif', Georgia, serif;
@@ -46,6 +52,12 @@
     --light-gray: #3a3a3a;
     --near-black: #e8eaed;
     --white: #121212;
+
+    /* Accessible text versions for dark mode */
+    --google-blue-text: #8ab4f8;
+    --google-red-text: #f28b82;
+    --google-yellow-text: #fdd663;
+    --google-green-text: #81c995;
 }
 
 * {
@@ -201,7 +213,7 @@ nav.scrolled {
 }
 
 .logo span {
-    color: var(--google-blue);
+    color: var(--google-blue-text);
 }
 
 .nav-links {
@@ -327,6 +339,25 @@ section {
 
 .hero-content {
     max-width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Visual order: label first, then h1, maintains accessibility with h1 first in DOM */
+.hero-content .hero-label {
+    order: 1;
+}
+
+.hero-content h1 {
+    order: 2;
+}
+
+.hero-content .hero-text {
+    order: 3;
+}
+
+.hero-content .cta-group {
+    order: 4;
 }
 
 .hero-label {
@@ -366,7 +397,7 @@ section {
 
 .hero h1 em {
     font-style: italic;
-    color: var(--google-blue);
+    color: var(--google-blue-text);
 }
 
 .hero-text {
@@ -459,7 +490,7 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--google-blue);
+    color: var(--google-blue-text);
     margin-bottom: var(--space-sm);
 }
 
@@ -560,12 +591,12 @@ section {
 
 .service-card:hover .tech-tag {
     background: rgba(66, 133, 244, 0.1);
-    color: var(--google-blue);
+    color: var(--google-blue-text);
 }
 
 .service-card.small-biz:hover .tech-tag {
     background: rgba(52, 168, 83, 0.1);
-    color: var(--google-green);
+    color: var(--google-green-text);
 }
 
 /* About */
@@ -670,7 +701,7 @@ section {
 
 .about-content h2 em {
     font-style: italic;
-    color: var(--google-red);
+    color: var(--google-red-text);
 }
 
 .about-content p {
@@ -729,7 +760,7 @@ section {
 }
 
 .contact .section-label {
-    color: var(--google-yellow);
+    color: #fdd663;
 }
 
 .contact .section-title {
@@ -757,7 +788,7 @@ section {
 }
 
 .contact-info p {
-    color: var(--text-muted);
+    color: #9aa0a6;
     margin-bottom: var(--space-md);
 }
 
@@ -778,14 +809,15 @@ section {
     stroke: var(--google-blue);
 }
 
-.contact-details a {
+.contact-details a,
+.contact-details span {
     color: var(--white);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .contact-details a:hover {
-    color: var(--google-blue);
+    color: var(--google-blue-text);
 }
 
 .contact-form {
@@ -813,7 +845,7 @@ section {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #9aa0a6;
+    color: #bdc1c6;
 }
 
 .contact-form input:focus,
@@ -863,7 +895,7 @@ section {
 }
 
 [data-theme="dark"] .contact .section-label {
-    color: var(--google-blue);
+    color: var(--google-blue-text);
 }
 
 [data-theme="dark"] .contact .section-title {
@@ -904,7 +936,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--google-blue);
+    color: var(--google-blue-text);
 }
 
 /* Dark footer for index.html (after contact section) */
@@ -1019,7 +1051,7 @@ h2 {
 
 h2 em {
     font-style: italic;
-    color: var(--google-red);
+    color: var(--google-red-text);
 }
 
 h3 {
@@ -1036,7 +1068,7 @@ main p {
 }
 
 main a {
-    color: var(--google-blue);
+    color: var(--google-blue-text);
     text-decoration: none;
 }
 
@@ -1060,7 +1092,7 @@ main li {
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
-    color: var(--google-blue);
+    color: var(--google-blue-text);
     text-decoration: none;
     margin-bottom: var(--space-lg);
     transition: gap 0.2s ease;
@@ -1161,7 +1193,7 @@ main li {
 
 .about-intro h1 em {
     font-style: italic;
-    color: var(--google-blue);
+    color: var(--google-blue-text);
 }
 
 .about-intro .subtitle {
@@ -1282,12 +1314,12 @@ main li {
     margin-bottom: var(--space-md);
 }
 
-.cta-section .btn {
+.cta-section .btn-primary {
     background: var(--google-blue);
     color: var(--white);
 }
 
-.cta-section .btn:hover {
+.cta-section .btn-primary:hover {
     background: var(--white);
     color: var(--near-black);
 }
