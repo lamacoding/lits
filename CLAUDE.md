@@ -16,9 +16,11 @@ Static website for Langwieser IT-Services e.U., an Austrian IT consulting busine
 - `impressum.html` - Legal notice (German legal requirement)
 - `datenschutz.html` - Privacy policy (German legal requirement)
 - `styles.css` - **Shared stylesheet** for all pages (includes page-specific styles)
-- `script.js` - **Shared JavaScript** for theme, language, navigation, and form handling
+- `script.js` - **Shared JavaScript** for theme, language, navigation, form handling, and SEO meta tag updates
+- `robots.txt` - Search engine crawling instructions and sitemap reference
+- `sitemap.xml` - XML sitemap with all pages and bilingual hreflang annotations
 - `favicon.svg` - SVG favicon
-- `profile.jpg` - Profile photo
+- `profile.jpg` - Profile photo (also used as Open Graph image)
 
 ### Shared Patterns
 
@@ -33,6 +35,7 @@ Static website for Langwieser IT-Services e.U., an Austrian IT consulting busine
 - **Bilingual (EN/DE)**: Language toggle via `.lang-toggle`, persisted to `localStorage`, auto-detects browser language
 - **Responsive design**: Mobile navigation with hamburger menu, CSS media queries
 - **Accessibility**: WCAG-compliant with skip links, ARIA attributes, keyboard navigation, and focus management
+- **SEO Optimized**: Comprehensive meta tags, structured data, sitemap, and bilingual SEO support
 
 ### Design System
 Google-inspired color palette defined as CSS variables:
@@ -75,6 +78,41 @@ The site follows WCAG 2.1 AA standards with the following implementations:
 - H1 appears first in DOM structure before other content (visual order maintained with flexbox)
 - Smooth scroll behavior with `scroll-behavior: smooth`
 
+### SEO Features
+
+The site implements comprehensive SEO optimization for search engines and social media:
+
+**Meta Tags (All Pages):**
+- Optimized page titles with relevant keywords (Nintex K2, Power Platform, IT consulting)
+- Meta descriptions (155-160 characters, bilingual DE/EN)
+- Canonical URLs to prevent duplicate content issues
+- Hreflang tags for bilingual content support (de, en, x-default)
+
+**Social Media Tags (All Pages):**
+- Open Graph tags for Facebook/LinkedIn sharing (og:title, og:description, og:image, og:locale, og:type, og:url)
+- Twitter Card tags for Twitter sharing (twitter:card, twitter:title, twitter:description, twitter:image)
+- Uses `profile.jpg` as the Open Graph/Twitter image (can be replaced with custom 1200x630px image)
+
+**Structured Data (JSON-LD):**
+- `index.html`: ProfessionalService schema with business details (address, hours, location, LinkedIn)
+- `index.html`: Service schema with offer catalog (Enterprise Solutions, Digital Kickstart)
+- `about.html`: Person schema for Matthias Langwieser with skills and expertise
+
+**Search Engine Files:**
+- `robots.txt`: Allows all crawlers, references sitemap
+- `sitemap.xml`: All 4 pages with priorities, change frequencies, and bilingual hreflang annotations
+
+**Bilingual SEO Strategy:**
+- Default meta tags in HTML are German (de_AT) - primary target audience
+- JavaScript dynamically updates meta tags to English when user switches language
+- `script.js` contains `metaTranslations` object with all meta content in both languages
+- `updateMetaTags()` function updates title, description, OG tags, Twitter tags, and locale on language change
+- Search engines index German content as primary; users get appropriate meta tags for their selected language
+
+**Domain:**
+- All URLs reference `https://langwieser-its.at/`
+- Update all URL references in meta tags, sitemap, and robots.txt if domain changes
+
 ## Development
 
 Open any `.html` file directly in a browser. No server required for basic viewing.
@@ -101,6 +139,23 @@ The contact form on `index.html` uses [Formspree](https://formspree.io) for hand
 ### Translations
 - **Page-specific**: Each HTML file has its own inline `<script>` block with a `translations` object.
 - When adding translations, add keys to both `en` and `de` objects in the relevant page's `translations` constant.
+
+### SEO Meta Tags
+- **Meta tags in HTML**: Default German (de_AT) meta tags are in each HTML file's `<head>` section
+- **Meta tag translations**: English versions are defined in `script.js` in the `metaTranslations` object
+- **When adding new pages**:
+  1. Add SEO meta tags to the HTML `<head>` (description, canonical, OG, Twitter, hreflang)
+  2. Add translations to `metaTranslations` object in `script.js` for both `en` and `de`
+  3. Add page to `sitemap.xml` with appropriate priority and change frequency
+  4. Update `getCurrentPage()` function in `script.js` if page has a non-index path
+- **When changing domain**: Update all URLs in meta tags (all HTML files), `sitemap.xml`, and `robots.txt`
+- **Open Graph image**: Currently uses `profile.jpg` - can be replaced with custom 1200x630px image for better social sharing
+
+### Structured Data
+- **JSON-LD scripts**: Located in `<head>` section before closing `</head>` tag
+- **index.html**: Contains ProfessionalService and Service schemas
+- **about.html**: Contains Person schema
+- **When updating business info**: Update corresponding fields in JSON-LD schemas (address, hours, services, etc.)
 
 ### Page-Specific Styles in styles.css
 - **Index page**: Uses `.hero`, `.services`, `.contact`, etc.
