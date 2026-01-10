@@ -32,10 +32,111 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 let currentLang = localStorage.getItem('lang') ||
     (navigator.language.startsWith('de') ? 'de' : 'en');
 
+// Meta tag translations for SEO
+const metaTranslations = {
+    en: {
+        index: {
+            title: "Nintex K2 & Power Platform Consulting | Langwieser IT-Services",
+            description: "Langwieser IT-Services - IT consulting for Nintex K2, Power Platform, and digitalization. Workflow automation for enterprises and small businesses across Austria and Europe.",
+            ogTitle: "Nintex K2 & Power Platform Consulting | Langwieser IT-Services",
+            ogDescription: "IT consulting for Nintex K2, Power Platform, and digitalization. Workflow automation for enterprises and small businesses across Austria and Europe."
+        },
+        about: {
+            title: "Matthias Langwieser - IT Consultant | Langwieser IT-Services",
+            description: "Meet Matthias Langwieser, IT consultant specializing in Nintex K2, Power Platform, and digitalization solutions for businesses of all sizes.",
+            ogTitle: "Matthias Langwieser - IT Consultant",
+            ogDescription: "IT consultant specializing in Nintex K2, Power Platform, and digitalization solutions for businesses of all sizes."
+        },
+        impressum: {
+            title: "Legal Notice | Langwieser IT-Services e.U.",
+            description: "Legal notice for Langwieser IT-Services e.U., an Austrian IT consulting business based in Sankt Ulrich bei Steyr.",
+            ogTitle: "Legal Notice | Langwieser IT-Services",
+            ogDescription: "Legal notice for Langwieser IT-Services e.U., an Austrian IT consulting business."
+        },
+        datenschutz: {
+            title: "Privacy Policy | Langwieser IT-Services e.U.",
+            description: "Privacy policy of Langwieser IT-Services e.U. - Information on data processing and your rights under GDPR.",
+            ogTitle: "Privacy Policy | Langwieser IT-Services",
+            ogDescription: "Information on data processing and your rights under GDPR."
+        }
+    },
+    de: {
+        index: {
+            title: "Nintex K2 & Power Platform Beratung | Langwieser IT-Services",
+            description: "Langwieser IT-Services - IT-Beratung für Nintex K2, Power Platform und Digitalisierung. Workflow-Automatisierung für Unternehmen in Österreich und Europa.",
+            ogTitle: "Nintex K2 & Power Platform Beratung | Langwieser IT-Services",
+            ogDescription: "IT-Beratung für Nintex K2, Power Platform und Digitalisierung. Workflow-Automatisierung für Unternehmen in Österreich und Europa."
+        },
+        about: {
+            title: "Matthias Langwieser - IT-Consultant | Langwieser IT-Services",
+            description: "Matthias Langwieser - IT-Consultant spezialisiert auf Nintex K2, Power Platform und Digitalisierungslösungen für Unternehmen jeder Größe.",
+            ogTitle: "Matthias Langwieser - IT-Consultant",
+            ogDescription: "IT-Consultant spezialisiert auf Nintex K2, Power Platform und Digitalisierungslösungen für Unternehmen jeder Größe."
+        },
+        impressum: {
+            title: "Impressum | Langwieser IT-Services e.U.",
+            description: "Impressum der Langwieser IT-Services e.U., einem österreichischen IT-Beratungsunternehmen mit Sitz in Sankt Ulrich bei Steyr.",
+            ogTitle: "Impressum | Langwieser IT-Services",
+            ogDescription: "Impressum der Langwieser IT-Services e.U., einem österreichischen IT-Beratungsunternehmen."
+        },
+        datenschutz: {
+            title: "Datenschutzerklärung | Langwieser IT-Services e.U.",
+            description: "Datenschutzerklärung der Langwieser IT-Services e.U. - Informationen zur Datenverarbeitung und Ihren Rechten gemäß DSGVO.",
+            ogTitle: "Datenschutzerklärung | Langwieser IT-Services",
+            ogDescription: "Informationen zur Datenverarbeitung und Ihren Rechten gemäß DSGVO."
+        }
+    }
+};
+
+// Function to detect current page
+function getCurrentPage() {
+    const path = window.location.pathname;
+    if (path.includes('about.html')) return 'about';
+    if (path.includes('impressum.html')) return 'impressum';
+    if (path.includes('datenschutz.html')) return 'datenschutz';
+    return 'index';
+}
+
+// Function to update meta tags based on language
+function updateMetaTags(lang) {
+    const page = getCurrentPage();
+    const meta = metaTranslations[lang]?.[page];
+
+    if (!meta) return;
+
+    // Update title
+    document.title = meta.title;
+
+    // Update meta description
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) descMeta.setAttribute('content', meta.description);
+
+    // Update OG tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', meta.ogTitle);
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', meta.ogDescription);
+
+    // Update Twitter tags
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', meta.ogTitle);
+
+    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDesc) twitterDesc.setAttribute('content', meta.ogDescription);
+
+    // Update og:locale
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute('content', lang === 'de' ? 'de_AT' : 'en_US');
+}
+
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
     document.documentElement.lang = lang;
+
+    // Update meta tags for SEO
+    updateMetaTags(lang);
 
     // Check if translations are defined
     if (typeof translations === 'undefined') {

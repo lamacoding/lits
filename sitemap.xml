@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://langwieser-its.at/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://langwieser-its.at/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://langwieser-its.at/" />
+  </url>
+
+  <!-- About page -->
+  <url>
+    <loc>https://langwieser-its.at/about.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://langwieser-its.at/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://langwieser-its.at/about.html" />
+  </url>
+
+  <!-- Impressum (Legal Notice) -->
+  <url>
+    <loc>https://langwieser-its.at/impressum.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://langwieser-its.at/impressum.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://langwieser-its.at/impressum.html" />
+  </url>
+
+  <!-- Datenschutz (Privacy Policy) -->
+  <url>
+    <loc>https://langwieser-its.at/datenschutz.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://langwieser-its.at/datenschutz.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://langwieser-its.at/datenschutz.html" />
+  </url>
+
+</urlset>

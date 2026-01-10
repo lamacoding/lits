@@ -1,0 +1,7 @@
+# robots.txt for langwieser-its.at
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://langwieser-its.at/sitemap.xml
