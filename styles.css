@@ -321,7 +321,8 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: var(--space-2xl);
+    justify-content: center;
+    padding-top: 0;
 }
 
 .hero-content {
@@ -985,6 +986,12 @@ main {
     max-width: 1000px;
     margin: 0 auto;
     padding: calc(80px + var(--space-xl)) var(--space-md) var(--space-xl);
+}
+
+/* Remove top padding on index page main (contains hero) */
+main:has(.hero) {
+    padding-top: 0;
+    max-width: none;
 }
 
 /* Override for about page */
