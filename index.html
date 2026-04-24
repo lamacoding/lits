@@ -1,440 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nintex K2 & Power Platform Beratung | Langwieser IT-Services</title>
-    <meta name="description" content="Langwieser IT-Services - IT-Beratung für Nintex K2, Power Platform und Digitalisierung. Workflow-Automatisierung für Unternehmen in Österreich und Europa.">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://langwieser-its.at/">
-
-    <!-- Hreflang Tags -->
-    <link rel="alternate" hreflang="de" href="https://langwieser-its.at/">
-    <link rel="alternate" hreflang="en" href="https://langwieser-its.at/">
-    <link rel="alternate" hreflang="x-default" href="https://langwieser-its.at/">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://langwieser-its.at/">
-    <meta property="og:title" content="Nintex K2 & Power Platform Beratung | Langwieser IT-Services">
-    <meta property="og:description" content="IT-Beratung für Nintex K2, Power Platform und Digitalisierung. Workflow-Automatisierung für Unternehmen in Österreich und Europa.">
-    <meta property="og:image" content="https://langwieser-its.at/profile.jpg">
-    <meta property="og:locale" content="de_AT">
-    <meta property="og:locale:alternate" content="en_US">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://langwieser-its.at/">
-    <meta name="twitter:title" content="Nintex K2 & Power Platform Beratung | Langwieser IT-Services">
-    <meta name="twitter:description" content="IT-Beratung für Nintex K2, Power Platform und Digitalisierung. Workflow-Automatisierung für Unternehmen in Österreich und Europa.">
-    <meta name="twitter:image" content="https://langwieser-its.at/profile.jpg">
-
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Structured Data - LocalBusiness -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Langwieser IT-Services e.U.",
-      "image": "https://langwieser-its.at/profile.jpg",
-      "@id": "https://langwieser-its.at/",
-      "url": "https://langwieser-its.at/",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Ulrichstraße 22",
-        "addressLocality": "Sankt Ulrich bei Steyr",
-        "postalCode": "4400",
-        "addressCountry": "AT"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 48.0333,
-        "longitude": 14.4667
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/matthias-langwieser/"
-      ],
-      "priceRange": "€€",
-      "areaServed": {
-        "@type": "Place",
-        "name": "Europe"
-      }
-    }
-    </script>
-
-    <!-- Structured Data - Service -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "IT Consulting",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Langwieser IT-Services e.U."
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Europe"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "IT Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Enterprise Solutions",
-              "description": "Workflow automation and process digitalization with Nintex K2 and Power Platform for large organizations"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Digital Kickstart",
-              "description": "Digitalization consulting and implementation for small businesses"
-            }
-          }
-        ]
-      }
-    }
-    </script>
+    <title>Langwieser IT-Services</title>
+    <meta name="description" content="Ein-Mann-Unternehmen für Entwicklung in Nintex K2, MS Power Platform und SQL.">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Nerdy font -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Floating accent shapes (decorative) -->
-    <div class="accent-shape blue" aria-hidden="true"></div>
-    <div class="accent-shape red" aria-hidden="true"></div>
-    <div class="accent-shape green" aria-hidden="true"></div>
-    <div class="accent-shape yellow" aria-hidden="true"></div>
+    <!-- Business Card -->
+    <main class="card">
+        <!-- Language Switch -->
+        <div class="lang-switch">
+            <button onclick="setLang('de')" id="btn-de" class="active">DE</button>
+            <button onclick="setLang('en')" id="btn-en">EN</button>
+        </div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-inner">
-            <a href="#" class="logo">Langwieser <span>IT-Services</span></a>
+        <div class="profile-pic-container">
+            <div class="profile-pic-placeholder">
+                <img src="profile.jpg" alt="Langwieser IT-Services Profile" class="profile-pic">
+            </div>
+        </div>
 
-            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
+        <div class="card-content">
+            <h1 class="name">&lt;Langwieser<br>IT-Services /&gt;</h1>
 
-            <div class="nav-links" id="nav-links">
-                <a href="#services" data-i18n="nav.services">Services</a>
-                <a href="about.html" data-i18n="nav.about">About</a>
-                <a href="#contact" data-i18n="nav.contact">Contact</a>
-                <a href="https://www.linkedin.com/in/matthias-langwieser/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="LinkedIn Profile">
-                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
-                    </svg>
-                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
-                    </svg>
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-body">
+                    <p class="desc" data-lang="de">
+                        <span class="prompt">~ $</span> whoami<br>
+                        Ein-Mann-Unternehmen spezialisiert auf:<br>
+                        <span class="highlight">- Nintex K2</span><br>
+                        <span class="highlight">- MS Power Platform</span><br>
+                        <span class="highlight">- SQL</span>
+                    </p>
+                    <p class="desc" data-lang="en" style="display: none;">
+                        <span class="prompt">~ $</span> whoami<br>
+                        One-man company doing development work in:<br>
+                        <span class="highlight">- Nintex K2</span><br>
+                        <span class="highlight">- MS Power Platform</span><br>
+                        <span class="highlight">- SQL</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn primary-btn" onclick="openModal()">
+                    <span data-lang="de">Kontakt aufnehmen</span>
+                    <span data-lang="en" style="display: none;">Get in touch</span>
                 </button>
-                <div class="lang-toggle" role="group" aria-label="Language selection">
-                    <button data-lang="en" aria-pressed="false">EN</button>
-                    <button data-lang="de" aria-pressed="false">DE</button>
-                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="impress.html">
+                    <span data-lang="de">Impressum</span>
+                    <span data-lang="en" style="display: none;">Imprint</span>
+                </a>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <main id="main-content">
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 data-i18n="hero.title">Technology that works <em>for</em> your business</h1>
-                <div class="hero-label">
-                    <span class="dot" aria-hidden="true"></span>
-                    <span data-i18n="hero.label">Available for new projects</span>
-                </div>
-                <p class="hero-text" data-i18n="hero.text">
-                    I help enterprises optimize their workflows with Nintex K2 & Power Platform, and guide small businesses on their digitalization journey. Personal service, real results.
-                </p>
-                <div class="cta-group">
-                    <a href="#contact" class="btn btn-primary">
-                        <span data-i18n="hero.cta">Let's talk</span>
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </a>
-                    <a href="#services" class="btn btn-secondary" data-i18n="hero.cta2">View services</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header fade-in">
-                <p class="section-label" data-i18n="services.label">What I offer</p>
-                <h2 class="section-title" data-i18n="services.title">Solutions for every scale</h2>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card enterprise fade-in">
-                    <div class="service-icon">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/>
-                        </svg>
-                    </div>
-                    <h3 data-i18n="services.enterprise.title">Enterprise Solutions</h3>
-                    <p data-i18n="services.enterprise.text">Streamline complex business processes with intelligent automation. From workflow design to database optimization, I help large organizations work smarter.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Nintex K2</span>
-                        <span class="tech-tag">Power Platform</span>
-                        <span class="tech-tag">Power Automate</span>
-                        <span class="tech-tag">SQL Server</span>
-                    </div>
-                </div>
-
-                <div class="service-card small-biz fade-in">
-                    <div class="service-icon">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
-                        </svg>
-                    </div>
-                    <h3 data-i18n="services.smallbiz.title">Digital Kickstart</h3>
-                    <p data-i18n="services.smallbiz.text">Ready to go digital but not sure where to start? I'll help you identify the right tools and build simple, effective solutions that grow with your business.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag" data-i18n="services.smallbiz.tag1">Process Analysis</span>
-                        <span class="tech-tag" data-i18n="services.smallbiz.tag2">Tool Selection</span>
-                        <span class="tech-tag" data-i18n="services.smallbiz.tag3">Implementation</span>
-                        <span class="tech-tag" data-i18n="services.smallbiz.tag4">Training</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-visual fade-in">
-                    <div class="profile-picture">
-                        <img src="profile.jpg" alt="Matthias Langwieser, IT Consultant" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
-                        <span class="profile-initials" aria-hidden="true">ML</span>
-                    </div>
-                    <div class="about-decoration top-right" aria-hidden="true">✦</div>
-                    <div class="about-decoration bottom-left" aria-hidden="true"></div>
-                </div>
-                <div class="about-content fade-in">
-                    <h2 data-i18n="about.title">Fresh perspective, <em>proven</em> skills</h2>
-                    <p data-i18n="about.text1">
-                        After gaining hands-on experience working with enterprise clients on complex automation and data projects, I founded Langwieser IT-Services to bring that expertise directly to businesses of all sizes.
-                    </p>
-                    <p data-i18n="about.text2">
-                        As a solo consultant, you get my full attention on your project—no handoffs, no miscommunication. Just direct collaboration and solutions tailored to your needs.
-                    </p>
-                    <ul class="values-list">
-                        <li>
-                            <span class="check" aria-hidden="true">
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </span>
-                            <span data-i18n="about.value1">Direct communication, no corporate overhead</span>
-                        </li>
-                        <li>
-                            <span class="check" aria-hidden="true">
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </span>
-                            <span data-i18n="about.value2">Flexible engagement—from quick consultations to full projects</span>
-                        </li>
-                        <li>
-                            <span class="check" aria-hidden="true">
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </span>
-                            <span data-i18n="about.value3">Based in Austria, working remotely across Europe</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header fade-in">
-                <p class="section-label" data-i18n="contact.label">Get in touch</p>
-                <h2 class="section-title" data-i18n="contact.title">Let's build something great</h2>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3 data-i18n="contact.info.title">Ready to optimize your workflows?</h3>
-                    <p data-i18n="contact.info.text">
-                        Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you. Let's discuss how I can help.
-                    </p>
-                    <ul class="contact-details">
-                        <li>
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
-                            </svg>
-                            <a href="mailto:matthias@langwieser-its.at">matthias@langwieser-its.at</a>
-                        </li>
-                        <li>
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
-                            </svg>
-                            <span data-i18n="contact.location">Ulrichstraße 22, 4400 Sankt Ulrich bei Steyr, Austria</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <form class="contact-form fade-in" action="https://formspree.io/f/mykkgezk" method="POST">
-                    <div class="form-group">
-                        <label for="contact-name" class="visually-hidden" data-i18n="contact.form.name">Your name</label>
-                        <input type="text" id="contact-name" name="name" required autocomplete="name" data-i18n-placeholder="contact.form.name" placeholder="Your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-email" class="visually-hidden" data-i18n="contact.form.email">Your email</label>
-                        <input type="email" id="contact-email" name="email" required autocomplete="email" data-i18n-placeholder="contact.form.email" placeholder="Your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-message" class="visually-hidden" data-i18n="contact.form.message">Tell me about your project...</label>
-                        <textarea id="contact-message" name="message" required data-i18n-placeholder="contact.form.message" placeholder="Tell me about your project..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <span class="btn-text" data-i18n="contact.form.submit">Send message</span>
-                        <span class="btn-loading" style="display: none;" data-i18n="contact.form.sending">Sending...</span>
-                        <svg class="btn-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
-                        </svg>
-                        <svg class="btn-spinner" style="display: none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10" stroke-opacity="0.25"/>
-                            <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round">
-                                <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="form-status" role="status" aria-live="polite" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 12px;"></div>
-                </form>
-            </div>
-        </div>
-    </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Langwieser IT-Services e.U. · <a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a></p>
-    </footer>
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-lang="de">Nachricht senden</h2>
+                <h2 data-lang="en" style="display: none;">Send message</h2>
+                <button class="close-btn" onclick="closeModal()" aria-label="Close">&times;</button>
+            </div>
+            <form action="https://formspree.io/f/mykkgezk" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="email" data-lang="de">Ihre E-Mail</label>
+                    <label for="email" data-lang="en" style="display: none;">Your Email</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="message" data-lang="de">Ihre Nachricht</label>
+                    <label for="message" data-lang="en" style="display: none;">Your Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn">
+                    <span data-lang="de">Senden <span class="arrow">&rarr;</span></span>
+                    <span data-lang="en" style="display: none;">Send <span class="arrow">&rarr;</span></span>
+                </button>
+            </form>
+        </div>
+    </div>
 
     <script>
-        const translations = {
-            en: {
-                'nav.services': 'Services',
-                'nav.about': 'About',
-                'nav.contact': 'Contact',
-                'hero.label': 'Available for new projects',
-                'hero.title': 'Technology that works <em>for</em> your business',
-                'hero.text': 'I help enterprises optimize their workflows with Nintex K2 & Power Platform, and guide small businesses on their digitalization journey. Personal service, real results.',
-                'hero.cta': "Let's talk",
-                'hero.cta2': 'View services',
-                'services.label': 'What I offer',
-                'services.title': 'Solutions for every scale',
-                'services.enterprise.title': 'Enterprise Solutions',
-                'services.enterprise.text': 'Streamline complex business processes with intelligent automation. From workflow design to database optimization, I help large organizations work smarter.',
-                'services.smallbiz.title': 'Digital Kickstart',
-                'services.smallbiz.text': "Ready to go digital but not sure where to start? I'll help you identify the right tools and build simple, effective solutions that grow with your business.",
-                'services.smallbiz.tag1': 'Process Analysis',
-                'services.smallbiz.tag2': 'Tool Selection',
-                'services.smallbiz.tag3': 'Implementation',
-                'services.smallbiz.tag4': 'Training',
-                'about.title': 'Fresh perspective, <em>proven</em> skills',
-                'about.text1': 'After gaining hands-on experience working with enterprise clients on complex automation and data projects, I founded Langwieser IT-Services to bring that expertise directly to businesses of all sizes.',
-                'about.text2': "As a solo consultant, you get my full attention on your project—no handoffs, no miscommunication. Just direct collaboration and solutions tailored to your needs.",
-                'about.value1': 'Direct communication, no corporate overhead',
-                'about.value2': 'Flexible engagement—from quick consultations to full projects',
-                'about.value3': 'Based in Austria, working remotely across Europe',
-                'contact.label': 'Get in touch',
-                'contact.title': "Let's build something great",
-                'contact.info.title': 'Ready to optimize your workflows?',
-                'contact.info.text': "Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you. Let's discuss how I can help.",
-                'contact.location': 'Ulrichstraße 22, 4400 Sankt Ulrich bei Steyr, Austria',
-                'contact.form.name': 'Your name',
-                'contact.form.email': 'Your email',
-                'contact.form.message': 'Tell me about your project...',
-                'contact.form.submit': 'Send message',
-                'contact.form.sending': 'Sending...',
-                'footer.impressum': 'Legal Notice',
-                'footer.privacy': 'Privacy Policy'
-            },
-            de: {
-                'nav.services': 'Leistungen',
-                'nav.about': 'Über mich',
-                'nav.contact': 'Kontakt',
-                'hero.label': 'Verfügbar für neue Projekte',
-                'hero.title': 'Technologie, die <em>für</em> Ihr Unternehmen arbeitet',
-                'hero.text': 'Ich helfe Unternehmen, ihre Arbeitsabläufe mit Nintex K2 & Power Platform zu optimieren, und begleite kleine Betriebe auf ihrem Weg in die Digitalisierung. Persönlicher Service, echte Ergebnisse.',
-                'hero.cta': 'Sprechen wir',
-                'hero.cta2': 'Leistungen ansehen',
-                'services.label': 'Mein Angebot',
-                'services.title': 'Lösungen für jede Größe',
-                'services.enterprise.title': 'Enterprise-Lösungen',
-                'services.enterprise.text': 'Komplexe Geschäftsprozesse mit intelligenter Automatisierung optimieren. Von Workflow-Design bis Datenbankoptimierung – ich helfe großen Organisationen, effizienter zu arbeiten.',
-                'services.smallbiz.title': 'Digital Durchstarten',
-                'services.smallbiz.text': 'Bereit für die Digitalisierung, aber unsicher wo anfangen? Ich helfe Ihnen, die richtigen Tools zu finden und einfache, effektive Lösungen zu entwickeln, die mit Ihrem Unternehmen wachsen.',
-                'services.smallbiz.tag1': 'Prozessanalyse',
-                'services.smallbiz.tag2': 'Tool-Auswahl',
-                'services.smallbiz.tag3': 'Umsetzung',
-                'services.smallbiz.tag4': 'Schulung',
-                'about.title': 'Frischer Blick, <em>bewährte</em> Kompetenz',
-                'about.text1': 'Nach praktischer Erfahrung in der Arbeit mit Enterprise-Kunden an komplexen Automatisierungs- und Datenprojekten habe ich Langwieser IT-Services gegründet, um diese Expertise direkt zu Unternehmen jeder Größe zu bringen.',
-                'about.text2': 'Als Einzelunternehmer bekommen Sie meine volle Aufmerksamkeit für Ihr Projekt – keine Übergaben, keine Missverständnisse. Nur direkte Zusammenarbeit und Lösungen, die auf Ihre Bedürfnisse zugeschnitten sind.',
-                'about.value1': 'Direkte Kommunikation, kein Konzern-Overhead',
-                'about.value2': 'Flexible Zusammenarbeit – von kurzen Beratungen bis zu ganzen Projekten',
-                'about.value3': 'Standort Österreich, remote tätig in ganz Europa',
-                'contact.label': 'Kontakt aufnehmen',
-                'contact.title': 'Lassen Sie uns etwas Großartiges bauen',
-                'contact.info.title': 'Bereit, Ihre Arbeitsabläufe zu optimieren?',
-                'contact.info.text': 'Ob Sie ein konkretes Projekt im Sinn haben oder einfach Möglichkeiten erkunden möchten – ich freue mich von Ihnen zu hören. Lassen Sie uns besprechen, wie ich helfen kann.',
-                'contact.location': 'Ulrichstraße 22, 4400 Sankt Ulrich bei Steyr, Österreich',
-                'contact.form.name': 'Ihr Name',
-                'contact.form.email': 'Ihre E-Mail',
-                'contact.form.message': 'Erzählen Sie mir von Ihrem Projekt...',
-                'contact.form.submit': 'Nachricht senden',
-                'contact.form.sending': 'Wird gesendet...',
-                'footer.impressum': 'Impressum',
-                'footer.privacy': 'Datenschutz'
-            }
-        };
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                if (el.dataset.lang === lang) {
+                    el.style.display = '';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.documentElement.lang = lang;
+            localStorage.setItem('langPref', lang);
+        }
+
+        function openModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        // Initialize with saved preference or default to German
+        const savedLang = localStorage.getItem('langPref') || 'de';
+        setLang(savedLang);
+
+        // Close modal on escape key or clicking backdrop
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
     </script>
-    <script src="script.js"></script>
 </body>
+
 </html>
