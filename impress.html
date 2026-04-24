@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum - Langwieser IT-Services</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      overflow: auto; /* allow scrolling here */
+      padding: 2rem;
+      min-height: 100dvh;
+    }
+    .impress-card {
+      position: relative;
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--radius-md);
+      padding: 3rem;
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .impress-card h1 {
+      margin-bottom: 2rem;
+      color: #fff;
+      font-size: 2rem;
+    }
+    .impress-card h2 {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+    }
+    .impress-card p {
+      margin-bottom: 1rem;
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .back-link:hover {
+      color: #fff;
+      text-shadow: 0 0 8px var(--color-primary-glow);
+    }
+    .impress-card a:not(.back-link) {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .impress-card a:not(.back-link):hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="impress-card">
+    <!-- Language Switch -->
+    <div class="lang-switch">
+      <button onclick="setLang('de')" id="btn-de" class="active">DE</button>
+      <button onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+
+    <a href="index.html" class="back-link">&larr; <span data-lang="de">Zurück</span><span data-lang="en" style="display: none;">Back</span></a>
+    
+    <h1 data-lang="de">Impressum</h1>
+    <h1 data-lang="en" style="display: none;">Imprint (Legal Notice)</h1>
+
+    <div data-lang="de">
+      <p>
+        <strong>Langwieser IT-Services e.U.</strong><br>
+        Matthias Langwieser<br>
+        Ulrichstraße 22<br>
+        4400 Sankt Ulrich bei Steyr<br>
+        Österreich
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <a href="mailto:matthias@langwieser-its.at">matthias@langwieser-its.at</a>
+      </p>
+
+      <h2>Unternehmensgegenstand</h2>
+      <p>
+        IT-Dienstleistungen, Beratung und Implementierung
+      </p>
+
+      <h2>UID-Nummer</h2>
+      <p>
+        ATU82576945
+      </p>
+
+      <h2>Aufsichtsbehörde</h2>
+      <p>
+        Bezirkshauptmannschaft Steyr-Land
+      </p>
+
+      <h2>Mitgliedschaft</h2>
+      <p>
+        Wirtschaftskammer Oberösterreich
+      </p>
+
+      <h2>Anwendbare Rechtsvorschriften</h2>
+      <p>
+        Gewerbeordnung: <a href="https://www.ris.bka.gv.at" target="_blank">www.ris.bka.gv.at</a>
+      </p>
+
+      <h2>Streitschlichtung</h2>
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
+      </p>
+    </div>
+
+    <div data-lang="en" style="display: none;">
+      <p>
+        <strong>Langwieser IT-Services e.U.</strong><br>
+        Matthias Langwieser<br>
+        Ulrichstraße 22<br>
+        4400 Sankt Ulrich bei Steyr<br>
+        Austria
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        E-Mail: <a href="mailto:matthias@langwieser-its.at">matthias@langwieser-its.at</a>
+      </p>
+
+      <h2>Purpose of Business</h2>
+      <p>
+        IT Services, Consulting and Implementation
+      </p>
+
+      <h2>VAT Number</h2>
+      <p>
+        ATU82576945
+      </p>
+
+      <h2>Supervisory Authority</h2>
+      <p>
+        District Commission Steyr-Land (Bezirkshauptmannschaft Steyr-Land)
+      </p>
+
+      <h2>Membership</h2>
+      <p>
+        Chamber of Commerce Upper Austria (Wirtschaftskammer Oberösterreich)
+      </p>
+
+      <h2>Applicable Legal Regulations</h2>
+      <p>
+        Trade Regulation Act (Gewerbeordnung): <a href="https://www.ris.bka.gv.at" target="_blank">www.ris.bka.gv.at</a>
+      </p>
+
+      <h2>Dispute Resolution</h2>
+      <p>
+        The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>. We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.
+      </p>
+
+      <h2>Liability for Content</h2>
+      <p>
+        The contents of this website were created with the greatest possible care. However, no guarantee can be given for the correctness, completeness, and topicality of the contents.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        if (el.dataset.lang === lang) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+      
+      localStorage.setItem('langPref', lang);
+    }
+
+    // Initialize with saved preference or default to German
+    const savedLang = localStorage.getItem('langPref') || 'de';
+    setLang(savedLang);
+  </script>
+</body>
+</html>
