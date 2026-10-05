@@ -1,281 +1,168 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung | Langwieser IT-Services e.U.</title>
-    <meta name="description" content="Datenschutzerklärung der Langwieser IT-Services e.U. - Informationen zur Datenverarbeitung und Ihren Rechten gemäß DSGVO.">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://langwieser-its.at/datenschutz.html">
-
-    <!-- Hreflang Tags -->
-    <link rel="alternate" hreflang="de" href="https://langwieser-its.at/datenschutz.html">
-    <link rel="alternate" hreflang="en" href="https://langwieser-its.at/datenschutz.html">
-    <link rel="alternate" hreflang="x-default" href="https://langwieser-its.at/datenschutz.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://langwieser-its.at/datenschutz.html">
-    <meta property="og:title" content="Datenschutzerklärung | Langwieser IT-Services">
-    <meta property="og:description" content="Informationen zur Datenverarbeitung und Ihren Rechten gemäß DSGVO.">
-    <meta property="og:image" content="https://langwieser-its.at/profile.jpg">
-    <meta property="og:locale" content="de_AT">
-    <meta property="og:locale:alternate" content="en_US">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://langwieser-its.at/datenschutz.html">
-    <meta name="twitter:title" content="Datenschutzerklärung | Langwieser IT-Services">
-    <meta name="twitter:description" content="Informationen zur Datenverarbeitung und Ihren Rechten gemäß DSGVO.">
-    <meta name="twitter:image" content="https://langwieser-its.at/profile.jpg">
-
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung | Langwieser IT-Services e.U.</title>
+  <meta name="description" content="Datenschutzerklärung der Langwieser IT-Services e.U. – Informationen zur Datenverarbeitung gemäß DSGVO.">
+  <link rel="canonical" href="https://langwieser-its.at/datenschutz.html">
+  <link rel="alternate" hreflang="de" href="https://langwieser-its.at/datenschutz.html">
+  <link rel="alternate" hreflang="en" href="https://langwieser-its.at/datenschutz.html">
+  <link rel="alternate" hreflang="x-default" href="https://langwieser-its.at/datenschutz.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://langwieser-its.at/datenschutz.html">
+  <meta property="og:title" content="Datenschutzerklärung | Langwieser IT-Services">
+  <meta property="og:description" content="Informationen zur Datenverarbeitung und Ihren Rechten gemäß DSGVO.">
+  <meta property="og:locale" content="de_AT">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="skip">Zum Inhalt springen</a>
 
-    <nav>
-        <div class="nav-inner">
-            <a href="index.html" class="logo">Langwieser <span>IT-Services</span></a>
-
-            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
-
-            <div class="nav-links" id="nav-links">
-                <a href="index.html#services" data-i18n="nav.services">Leistungen</a>
-                <a href="about.html" data-i18n="nav.about">Über mich</a>
-                <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
-                <a href="https://www.linkedin.com/in/matthias-langwieser/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="LinkedIn Profile">
-                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
-                    </svg>
-                    <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
-                    </svg>
-                </button>
-                <div class="lang-toggle" role="group" aria-label="Language selection">
-                    <button data-lang="en" aria-pressed="false">EN</button>
-                    <button data-lang="de" aria-pressed="false">DE</button>
-                </div>
-            </div>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Langwieser <span>IT-Services</span></a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <div class="nav__links">
+          <a href="index.html#leistungen-unternehmen" data-i18n="nav.services">Leistungen</a>
+          <a href="index.html#ueber-mich" data-i18n="nav.about">Über mich</a>
+          <a href="index.html#kontakt" data-i18n="nav.contact">Kontakt</a>
         </div>
-    </nav>
-
-    <main id="main-content">
-        <a href="index.html" class="back-link">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-            </svg>
-            <span data-i18n="privacy.back">Zurück zur Startseite</span>
-        </a>
-
-        <h1 data-i18n="privacy.title">Datenschutzerklärung</h1>
-        <p class="last-updated" data-i18n="privacy.lastUpdated">Stand: Januar 2025</p>
-
-        <div class="highlight-box">
-            <p data-i18n="privacy.intro">Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Ich verarbeite Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).</p>
+        <div class="nav__controls">
+          <button type="button" class="icon-btn theme-toggle" aria-pressed="false" aria-label="Zum dunklen Modus wechseln">
+            <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+            <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+          </button>
+          <div class="lang-toggle" role="group" aria-label="Sprache wählen">
+            <button type="button" data-set-lang="de" aria-pressed="true">DE</button>
+            <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+          </div>
+          <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Menü öffnen">
+            <svg class="icon-open" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg class="icon-close" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
         </div>
+      </nav>
+    </div>
+  </header>
 
-        <h2 data-i18n="privacy.controller.title">1. Verantwortlicher</h2>
-        <div class="info-block">
-            <p><strong>Langwieser IT-Services e.U.</strong></p>
-            <p>Matthias Langwieser</p>
-            <p>Ulrichstraße 22</p>
-            <p>4400 Sankt Ulrich bei Steyr</p>
-            <p>Österreich</p>
-            <p><strong>E-Mail:</strong> <a href="mailto:matthias@langwieser-its.at">matthias@langwieser-its.at</a></p>
-        </div>
+  <div class="nav-panel" id="nav-panel">
+      <a href="index.html#leistungen-unternehmen" data-i18n="nav.servicesBiz">Für Unternehmen</a>
+      <a href="index.html#leistungen-privat" data-i18n="nav.servicesPriv">Für Privatkunden</a>
+      <a href="index.html#ueber-mich" data-i18n="nav.about">Über mich</a>
+      <a href="index.html#kontakt" data-i18n="nav.contact">Kontakt</a>
+    </div>
 
-        <h2 data-i18n="privacy.collection.title">2. Erhebung und Verarbeitung von Daten</h2>
-        <p data-i18n="privacy.collection.text1">Wenn Sie meine Website besuchen, werden automatisch folgende Daten erfasst:</p>
-        <ul>
-            <li data-i18n="privacy.collection.item1">IP-Adresse des anfragenden Rechners</li>
-            <li data-i18n="privacy.collection.item2">Datum und Uhrzeit des Zugriffs</li>
-            <li data-i18n="privacy.collection.item3">Name und URL der abgerufenen Datei</li>
-            <li data-i18n="privacy.collection.item4">Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
-            <li data-i18n="privacy.collection.item5">Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
-        </ul>
-        <p data-i18n="privacy.collection.text2">Diese Daten werden ausschließlich zur Gewährleistung eines störungsfreien Betriebs der Website und zur Verbesserung meines Angebots ausgewertet. Eine Zuordnung zu einer bestimmten Person ist nicht möglich.</p>
+  <main id="main-content" class="legal">
+    <div class="container legal-doc">
+      <a href="index.html" class="legal__back">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span data-i18n="legal.back">Zurück zur Startseite</span>
+      </a>
 
-        <h2 data-i18n="privacy.contact.title">3. Kontaktaufnahme</h2>
-        <p data-i18n="privacy.contact.text">Wenn Sie per Formular auf der Website oder per E-Mail Kontakt mit mir aufnehmen, werden Ihre angegebenen Daten (Name, E-Mail-Adresse, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter.</p>
+      <h1 data-i18n="privacy.title">Datenschutzerklärung</h1>
+      <p class="last-updated" data-i18n="privacy.updated">Stand: Oktober 2026</p>
 
-        <h3 data-i18n="privacy.contact.basis.title">Rechtsgrundlage</h3>
-        <p data-i18n="privacy.contact.basis.text">Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage).</p>
+      <div class="highlight-box">
+        <p data-i18n="privacy.intro">Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Ich verarbeite Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).</p>
+      </div>
 
-        <h3 data-i18n="privacy.contact.duration.title">Speicherdauer</h3>
-        <p data-i18n="privacy.contact.duration.text">Die von Ihnen übermittelten Daten verbleiben bei mir, bis Sie mich zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt. Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+      <h2 data-i18n="privacy.c1">1. Verantwortlicher</h2>
+      <div class="info-block">
+        <p><strong>Langwieser IT-Services e.U.</strong></p>
+        <p>Matthias Langwieser</p>
+        <p>Ulrichstraße 22</p>
+        <p>4400 Sankt Ulrich bei Steyr</p>
+        <p>Österreich</p>
+        <p><strong>E-Mail:</strong> <a href="mailto:matthias@langwieser-its.at">matthias@langwieser-its.at</a></p>
+      </div>
 
-        <h2 data-i18n="privacy.cookies.title">4. Cookies</h2>
-        <p data-i18n="privacy.cookies.text1">Diese Website verwendet nur technisch notwendige Cookies:</p>
-        <ul>
-            <li data-i18n="privacy.cookies.item1"><strong>Spracheinstellung:</strong> Speichert Ihre bevorzugte Sprache (DE/EN) im lokalen Speicher Ihres Browsers</li>
-        </ul>
-        <p data-i18n="privacy.cookies.text2">Es werden keine Tracking-Cookies oder Cookies von Drittanbietern verwendet.</p>
+      <h2 data-i18n="privacy.c2">2. Erhebung und Verarbeitung von Daten</h2>
+      <p data-i18n="privacy.c2t1">Wenn Sie meine Website besuchen, werden automatisch folgende Daten erfasst (Server-Logs des Hosters):</p>
+      <ul>
+        <li data-i18n="privacy.c2i1">IP-Adresse des anfragenden Rechners</li>
+        <li data-i18n="privacy.c2i2">Datum und Uhrzeit des Zugriffs</li>
+        <li data-i18n="privacy.c2i3">Name und URL der abgerufenen Datei</li>
+        <li data-i18n="privacy.c2i4">Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
+        <li data-i18n="privacy.c2i5">Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
+      </ul>
+      <p data-i18n="privacy.c2t2">Diese Daten werden ausschließlich zur Gewährleistung eines störungsfreien Betriebs der Website und zur Verbesserung meines Angebots ausgewertet. Eine Zuordnung zu einer bestimmten Person ist nicht möglich.</p>
 
-        <h2 data-i18n="privacy.thirdparty.title">5. Dienste von Drittanbietern</h2>
+      <h2 data-i18n="privacy.c3">3. Kontaktaufnahme</h2>
+      <p data-i18n="privacy.c3t">Wenn Sie per Formular auf der Website oder per E-Mail Kontakt mit mir aufnehmen, werden Ihre angegebenen Daten (Name, E-Mail-Adresse, Anliegen, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter.</p>
+      <h3 data-i18n="privacy.c3b">Rechtsgrundlage</h3>
+      <p data-i18n="privacy.c3bt">Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage).</p>
+      <h3 data-i18n="privacy.c3d">Speicherdauer</h3>
+      <p data-i18n="privacy.c3dt">Die von Ihnen übermittelten Daten verbleiben bei mir, bis Sie mich zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt. Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
 
-        <h3 data-i18n="privacy.thirdparty.fonts.title">Google Fonts</h3>
-        <p data-i18n="privacy.thirdparty.fonts.text">Diese Website verwendet Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Schriftarten in Ihren Browser-Cache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über Ihre IP-Adresse meine Website aufgerufen wurde. Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung).</p>
-        <p data-i18n="privacy.thirdparty.fonts.moreinfo">Weitere Informationen zu Google Fonts finden Sie unter <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener">https://developers.google.com/fonts/faq</a> und in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+      <h2 data-i18n="privacy.c4">4. Lokale Speicherung (kein Tracking)</h2>
+      <p data-i18n="privacy.c4t1">Diese Website speichert technisch notwendige Einstellungen im lokalen Speicher Ihres Browsers (localStorage), keine Tracking-Cookies:</p>
+      <ul>
+        <li data-i18n="privacy.c4i1">Spracheinstellung (DE/EN)</li>
+        <li data-i18n="privacy.c4i2">Theme-Einstellung (hell/dunkel)</li>
+      </ul>
+      <p data-i18n="privacy.c4t2">Es werden keine Tracking-Cookies oder Analyse-Tools von Drittanbietern verwendet.</p>
 
-        <h3 data-i18n="privacy.thirdparty.formspree.title">Formspree (Kontaktformular)</h3>
-        <p data-i18n="privacy.thirdparty.formspree.text">Für die Verarbeitung von Kontaktanfragen über das Kontaktformular nutze ich den Dienst Formspree (Formspree Inc., USA). Wenn Sie das Kontaktformular absenden, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) an die Server von Formspree übermittelt und von dort an meine E-Mail-Adresse weitergeleitet. Formspree verarbeitet diese Daten ausschließlich zur Zustellung Ihrer Nachricht. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer effizienten Bearbeitung von Anfragen).</p>
-        <p data-i18n="privacy.thirdparty.formspree.moreinfo">Weitere Informationen finden Sie in der Datenschutzerklärung von Formspree: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">https://formspree.io/legal/privacy-policy/</a></p>
+      <h2 data-i18n="privacy.c5">5. Dienste von Drittanbietern</h2>
+      <h3 data-i18n="privacy.c5f">Formspree (Kontaktformular)</h3>
+      <p data-i18n="privacy.c5ft">Für die Verarbeitung von Kontaktanfragen über das Kontaktformular nutze ich den Dienst Formspree (Formspree Inc., USA). Wenn Sie das Kontaktformular absenden, werden die von Ihnen eingegebenen Daten an die Server von Formspree übermittelt und von dort an meine E-Mail-Adresse weitergeleitet. Formspree verarbeitet diese Daten ausschließlich zur Zustellung Ihrer Nachricht. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b und lit. f DSGVO.</p>
+      <p><span data-i18n="privacy.c5fm">Weitere Informationen: </span><a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">https://formspree.io/legal/privacy-policy/</a></p>
+      <h3 data-i18n="privacy.c5fonts">Schriftarten</h3>
+      <p data-i18n="privacy.c5fontst">Diese Website verwendet ausschließlich systemeigene Schriftarten Ihres Geräts. Es werden keine Schriftarten von Google Fonts oder anderen Drittanbietern nachgeladen.</p>
 
-        <h2 data-i18n="privacy.rights.title">6. Ihre Rechte</h2>
-        <p data-i18n="privacy.rights.intro">Ihnen stehen grundsätzlich folgende Rechte zu:</p>
-        <ul>
-            <li data-i18n="privacy.rights.item1"><strong>Auskunftsrecht:</strong> Sie haben das Recht, Auskunft über Ihre bei mir gespeicherten personenbezogenen Daten zu erhalten.</li>
-            <li data-i18n="privacy.rights.item2"><strong>Berichtigungsrecht:</strong> Sie haben das Recht auf Berichtigung unrichtiger Daten.</li>
-            <li data-i18n="privacy.rights.item3"><strong>Löschungsrecht:</strong> Sie haben das Recht auf Löschung Ihrer Daten, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
-            <li data-i18n="privacy.rights.item4"><strong>Einschränkungsrecht:</strong> Sie haben das Recht auf Einschränkung der Verarbeitung Ihrer Daten.</li>
-            <li data-i18n="privacy.rights.item5"><strong>Widerspruchsrecht:</strong> Sie haben das Recht, der Verarbeitung Ihrer Daten zu widersprechen.</li>
-            <li data-i18n="privacy.rights.item6"><strong>Datenübertragbarkeit:</strong> Sie haben das Recht, Ihre Daten in einem gängigen Format zu erhalten.</li>
-        </ul>
+      <h2 data-i18n="privacy.c6">6. Ihre Rechte</h2>
+      <p data-i18n="privacy.c6t">Ihnen stehen grundsätzlich folgende Rechte zu:</p>
+      <ul>
+        <li data-i18n="privacy.c6i1">Auskunftsrecht: Sie haben das Recht, Auskunft über Ihre bei mir gespeicherten personenbezogenen Daten zu erhalten.</li>
+        <li data-i18n="privacy.c6i2">Berichtigungsrecht: Sie haben das Recht auf Berichtigung unrichtiger Daten.</li>
+        <li data-i18n="privacy.c6i3">Löschungsrecht: Sie haben das Recht auf Löschung Ihrer Daten, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
+        <li data-i18n="privacy.c6i4">Einschränkungsrecht: Sie haben das Recht auf Einschränkung der Verarbeitung Ihrer Daten.</li>
+        <li data-i18n="privacy.c6i5">Widerspruchsrecht: Sie haben das Recht, der Verarbeitung Ihrer Daten zu widersprechen.</li>
+        <li data-i18n="privacy.c6i6">Datenübertragbarkeit: Sie haben das Recht, Ihre Daten in einem gängigen Format zu erhalten.</li>
+      </ul>
 
-        <h2 data-i18n="privacy.complaint.title">7. Beschwerderecht</h2>
-        <p data-i18n="privacy.complaint.text">Sie haben das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren:</p>
-        <div class="info-block">
-            <p><strong>Österreichische Datenschutzbehörde</strong></p>
-            <p>Barichgasse 40-42</p>
-            <p>1030 Wien</p>
-            <p><strong>Telefon:</strong> +43 1 52 152-0</p>
-            <p><strong>E-Mail:</strong> <a href="mailto:dsb@dsb.gv.at">dsb@dsb.gv.at</a></p>
-            <p><strong>Website:</strong> <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">https://www.dsb.gv.at</a></p>
-        </div>
+      <h2 data-i18n="privacy.c7">7. Beschwerderecht</h2>
+      <p data-i18n="privacy.c7t">Sie haben das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren:</p>
+      <div class="info-block">
+        <p><strong>Österreichische Datenschutzbehörde</strong></p>
+        <p>Barichgasse 40-42</p>
+        <p>1030 Wien</p>
+        <p><strong>Telefon:</strong> +43 1 52 152-0</p>
+        <p><strong>E-Mail:</strong> <a href="mailto:dsb@dsb.gv.at">dsb@dsb.gv.at</a></p>
+        <p><strong>Website:</strong> <a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer">https://www.dsb.gv.at</a></p>
+      </div>
 
-        <h2 data-i18n="privacy.security.title">8. Datensicherheit</h2>
-        <p data-i18n="privacy.security.text">Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
+      <h2 data-i18n="privacy.c8">8. Datensicherheit</h2>
+      <p data-i18n="privacy.c8t">Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
 
-        <h2 data-i18n="privacy.changes.title">9. Änderungen dieser Datenschutzerklärung</h2>
-        <p data-i18n="privacy.changes.text">Ich behalte mir vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen meiner Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
-    </main>
+      <h2 data-i18n="privacy.c9">9. Änderungen dieser Datenschutzerklärung</h2>
+      <p data-i18n="privacy.c9t">Ich behalte mir vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen meiner Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
+    </div>
+  </main>
 
-    <footer>
-        <p>© 2026 Langwieser IT-Services e.U. · <a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a></p>
-    </footer>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p data-i18n="footer.copy">© 2026 Langwieser IT-Services e.U.</p>
+      <div class="site-footer__links">
+        <a href="impress.html" data-i18n="footer.impress">Impressum</a>
+        <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+        <a href="https://www.linkedin.com/in/matthias-langwieser/" target="_blank" rel="noopener noreferrer" data-i18n="footer.linkedin">LinkedIn</a>
+        <span>UID ATU82576945</span>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-        const translations = {
-            en: {
-                'nav.services': 'Services',
-                'nav.about': 'About',
-                'nav.contact': 'Contact',
-                'privacy.back': 'Back to homepage',
-                'privacy.title': 'Privacy Policy',
-                'privacy.lastUpdated': 'Last updated: January 2025',
-                'privacy.intro': 'The protection of your personal data is of particular concern to me. I therefore process your data exclusively on the basis of legal provisions (GDPR, TKG 2003).',
-                'privacy.controller.title': '1. Data Controller',
-                'privacy.collection.title': '2. Data Collection and Processing',
-                'privacy.collection.text1': 'When you visit my website, the following data is automatically collected:',
-                'privacy.collection.item1': 'IP address of the requesting computer',
-                'privacy.collection.item2': 'Date and time of access',
-                'privacy.collection.item3': 'Name and URL of the retrieved file',
-                'privacy.collection.item4': 'Website from which access is made (referrer URL)',
-                'privacy.collection.item5': 'Browser used and, if applicable, the operating system of your computer',
-                'privacy.collection.text2': 'This data is evaluated exclusively to ensure trouble-free operation of the website and to improve my services. It is not possible to assign this data to a specific person.',
-                'privacy.contact.title': '3. Contact',
-                'privacy.contact.text': 'If you contact me via the website form or by email, your provided data (name, email address, message) will be stored for the purpose of processing the request and in case of follow-up questions. I will not share this data without your consent.',
-                'privacy.contact.basis.title': 'Legal Basis',
-                'privacy.contact.basis.text': 'Processing is based on Art. 6 Para. 1 lit. b GDPR (contract fulfillment or pre-contractual measures) and Art. 6 Para. 1 lit. f GDPR (legitimate interest in responding to your inquiry).',
-                'privacy.contact.duration.title': 'Storage Duration',
-                'privacy.contact.duration.text': 'The data you submit will remain with me until you request deletion, revoke your consent to storage, or the purpose for data storage no longer applies. Mandatory legal provisions – especially retention periods – remain unaffected.',
-                'privacy.cookies.title': '4. Cookies',
-                'privacy.cookies.text1': 'This website only uses technically necessary cookies:',
-                'privacy.cookies.item1': '<strong>Language preference:</strong> Stores your preferred language (DE/EN) in your browser\'s local storage',
-                'privacy.cookies.text2': 'No tracking cookies or third-party cookies are used.',
-                'privacy.thirdparty.title': '5. Third-Party Services',
-                'privacy.thirdparty.fonts.title': 'Google Fonts',
-                'privacy.thirdparty.fonts.text': 'This website uses Google Fonts for uniform font display. When you access a page, your browser loads the required fonts into its cache to display texts and fonts correctly. For this purpose, the browser you are using must connect to Google\'s servers. This gives Google knowledge that my website was accessed via your IP address. The use of Google Fonts is based on Art. 6 Para. 1 lit. f GDPR (legitimate interest in uniform presentation).',
-                'privacy.thirdparty.fonts.moreinfo': 'More information about Google Fonts can be found at <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener">https://developers.google.com/fonts/faq</a> and in Google\'s privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>',
-                'privacy.thirdparty.formspree.title': 'Formspree (Contact Form)',
-                'privacy.thirdparty.formspree.text': 'For processing contact requests via the contact form, I use the service Formspree (Formspree Inc., USA). When you submit the contact form, the data you entered (name, email address, message) is transmitted to Formspree\'s servers and forwarded from there to my email address. Formspree processes this data exclusively for delivering your message. The use is based on Art. 6 Para. 1 lit. b GDPR (contract fulfillment or pre-contractual measures) and Art. 6 Para. 1 lit. f GDPR (legitimate interest in efficient handling of inquiries).',
-                'privacy.thirdparty.formspree.moreinfo': 'More information can be found in Formspree\'s privacy policy: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">https://formspree.io/legal/privacy-policy/</a>',
-                'privacy.rights.title': '6. Your Rights',
-                'privacy.rights.intro': 'You generally have the following rights:',
-                'privacy.rights.item1': '<strong>Right to information:</strong> You have the right to obtain information about your personal data stored by me.',
-                'privacy.rights.item2': '<strong>Right to rectification:</strong> You have the right to correct inaccurate data.',
-                'privacy.rights.item3': '<strong>Right to deletion:</strong> You have the right to delete your data, provided no legal retention obligations prevent this.',
-                'privacy.rights.item4': '<strong>Right to restriction:</strong> You have the right to restrict the processing of your data.',
-                'privacy.rights.item5': '<strong>Right to object:</strong> You have the right to object to the processing of your data.',
-                'privacy.rights.item6': '<strong>Data portability:</strong> You have the right to receive your data in a common format.',
-                'privacy.complaint.title': '7. Right to Complain',
-                'privacy.complaint.text': 'You have the right to complain to the competent supervisory authority:',
-                'privacy.security.title': '8. Data Security',
-                'privacy.security.text': 'For security reasons and to protect the transmission of confidential content, this website uses SSL or TLS encryption. You can recognize an encrypted connection by the browser address bar changing from "http://" to "https://" and the lock icon in your browser bar.',
-                'privacy.changes.title': '9. Changes to this Privacy Policy',
-                'privacy.changes.text': 'I reserve the right to adapt this privacy policy so that it always complies with current legal requirements or to implement changes to my services. The new privacy policy will then apply to your next visit.',
-                'footer.impressum': 'Legal Notice',
-                'footer.privacy': 'Privacy Policy'
-            },
-            de: {
-                'nav.services': 'Leistungen',
-                'nav.about': 'Über mich',
-                'nav.contact': 'Kontakt',
-                'privacy.back': 'Zurück zur Startseite',
-                'privacy.title': 'Datenschutzerklärung',
-                'privacy.lastUpdated': 'Stand: Januar 2025',
-                'privacy.intro': 'Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Ich verarbeite Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).',
-                'privacy.controller.title': '1. Verantwortlicher',
-                'privacy.collection.title': '2. Erhebung und Verarbeitung von Daten',
-                'privacy.collection.text1': 'Wenn Sie meine Website besuchen, werden automatisch folgende Daten erfasst:',
-                'privacy.collection.item1': 'IP-Adresse des anfragenden Rechners',
-                'privacy.collection.item2': 'Datum und Uhrzeit des Zugriffs',
-                'privacy.collection.item3': 'Name und URL der abgerufenen Datei',
-                'privacy.collection.item4': 'Website, von der aus der Zugriff erfolgt (Referrer-URL)',
-                'privacy.collection.item5': 'Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners',
-                'privacy.collection.text2': 'Diese Daten werden ausschließlich zur Gewährleistung eines störungsfreien Betriebs der Website und zur Verbesserung meines Angebots ausgewertet. Eine Zuordnung zu einer bestimmten Person ist nicht möglich.',
-                'privacy.contact.title': '3. Kontaktaufnahme',
-                'privacy.contact.text': 'Wenn Sie per Formular auf der Website oder per E-Mail Kontakt mit mir aufnehmen, werden Ihre angegebenen Daten (Name, E-Mail-Adresse, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter.',
-                'privacy.contact.basis.title': 'Rechtsgrundlage',
-                'privacy.contact.basis.text': 'Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage).',
-                'privacy.contact.duration.title': 'Speicherdauer',
-                'privacy.contact.duration.text': 'Die von Ihnen übermittelten Daten verbleiben bei mir, bis Sie mich zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt. Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.',
-                'privacy.cookies.title': '4. Cookies',
-                'privacy.cookies.text1': 'Diese Website verwendet nur technisch notwendige Cookies:',
-                'privacy.cookies.item1': '<strong>Spracheinstellung:</strong> Speichert Ihre bevorzugte Sprache (DE/EN) im lokalen Speicher Ihres Browsers',
-                'privacy.cookies.text2': 'Es werden keine Tracking-Cookies oder Cookies von Drittanbietern verwendet.',
-                'privacy.thirdparty.title': '5. Dienste von Drittanbietern',
-                'privacy.thirdparty.fonts.title': 'Google Fonts',
-                'privacy.thirdparty.fonts.text': 'Diese Website verwendet Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Schriftarten in Ihren Browser-Cache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über Ihre IP-Adresse meine Website aufgerufen wurde. Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung).',
-                'privacy.thirdparty.fonts.moreinfo': 'Weitere Informationen zu Google Fonts finden Sie unter <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener">https://developers.google.com/fonts/faq</a> und in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>',
-                'privacy.thirdparty.formspree.title': 'Formspree (Kontaktformular)',
-                'privacy.thirdparty.formspree.text': 'Für die Verarbeitung von Kontaktanfragen über das Kontaktformular nutze ich den Dienst Formspree (Formspree Inc., USA). Wenn Sie das Kontaktformular absenden, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) an die Server von Formspree übermittelt und von dort an meine E-Mail-Adresse weitergeleitet. Formspree verarbeitet diese Daten ausschließlich zur Zustellung Ihrer Nachricht. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer effizienten Bearbeitung von Anfragen).',
-                'privacy.thirdparty.formspree.moreinfo': 'Weitere Informationen finden Sie in der Datenschutzerklärung von Formspree: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">https://formspree.io/legal/privacy-policy/</a>',
-                'privacy.rights.title': '6. Ihre Rechte',
-                'privacy.rights.intro': 'Ihnen stehen grundsätzlich folgende Rechte zu:',
-                'privacy.rights.item1': '<strong>Auskunftsrecht:</strong> Sie haben das Recht, Auskunft über Ihre bei mir gespeicherten personenbezogenen Daten zu erhalten.',
-                'privacy.rights.item2': '<strong>Berichtigungsrecht:</strong> Sie haben das Recht auf Berichtigung unrichtiger Daten.',
-                'privacy.rights.item3': '<strong>Löschungsrecht:</strong> Sie haben das Recht auf Löschung Ihrer Daten, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.',
-                'privacy.rights.item4': '<strong>Einschränkungsrecht:</strong> Sie haben das Recht auf Einschränkung der Verarbeitung Ihrer Daten.',
-                'privacy.rights.item5': '<strong>Widerspruchsrecht:</strong> Sie haben das Recht, der Verarbeitung Ihrer Daten zu widersprechen.',
-                'privacy.rights.item6': '<strong>Datenübertragbarkeit:</strong> Sie haben das Recht, Ihre Daten in einem gängigen Format zu erhalten.',
-                'privacy.complaint.title': '7. Beschwerderecht',
-                'privacy.complaint.text': 'Sie haben das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren:',
-                'privacy.security.title': '8. Datensicherheit',
-                'privacy.security.text': 'Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.',
-                'privacy.changes.title': '9. Änderungen dieser Datenschutzerklärung',
-                'privacy.changes.text': 'Ich behalte mir vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen meiner Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.',
-                'footer.impressum': 'Impressum',
-                'footer.privacy': 'Datenschutz'
-            }
-        };
-    </script>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
