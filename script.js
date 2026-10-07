@@ -90,8 +90,7 @@
       'priv.mig.text': 'Neues Gerät einrichten und Ihre Daten vom alten Gerät übernehmen.',
       'priv.mig.price': 'ab €79',
       'priv.note1': 'Erstgespräch kostenlos',
-      'priv.note2': 'Anfahrt im Raum Steyr (ca. 30 km) kostenlos, darüber hinaus nach Absprache',
-      'priv.note3': 'Außerhalb des Radius erhalten Sie nach kurzer Klärung ein Angebot',
+      'priv.note2': 'Anfahrt im Raum Steyr (ca. 30 km) kostenlos; darüber hinaus nach Absprache – Sie erhalten nach kurzer Klärung ein Angebot',
       'priv.ust': 'Alle Preise inkl. 20 % USt',
       'priv.cta': 'Kostenloses Erstgespräch anfragen',
 
@@ -151,17 +150,17 @@
       'impress.law': 'Anwendbare Rechtsvorschriften',
       'impress.lawText': 'Gewerbeordnung:',
       'impress.dispute': 'Streitschlichtung',
-      'impress.disputeText': 'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:',
-      'impress.disputeEnd': 'Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
+      'impress.disputeText': 'Beschwerden richten Sie bitte an matthias@langwieser-its.at.',
+      'impress.disputeEnd': 'Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
       'impress.liability': 'Haftung für Inhalte',
       'impress.liabilityText': 'Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.',
 
       'privacy.title': 'Datenschutzerklärung',
       'privacy.updated': 'Stand: Oktober 2026',
-      'privacy.intro': 'Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Ich verarbeite Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).',
+      'privacy.intro': 'Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Ich verarbeite Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2021).',
       'privacy.c1': '1. Verantwortlicher',
       'privacy.c2': '2. Erhebung und Verarbeitung von Daten',
-      'privacy.c2t1': 'Wenn Sie meine Website besuchen, werden automatisch folgende Daten erfasst (Server-Logs des Hosters):',
+      'privacy.c2t1': 'Wenn Sie meine Website besuchen, werden automatisch folgende Daten erfasst (Server-Logs beim Hosting-Anbieter IONOS SE, Deutschland):',
       'privacy.c2i1': 'IP-Adresse des anfragenden Rechners',
       'privacy.c2i2': 'Datum und Uhrzeit des Zugriffs',
       'privacy.c2i3': 'Name und URL der abgerufenen Datei',
@@ -181,7 +180,7 @@
       'privacy.c4t2': 'Es werden keine Tracking-Cookies oder Analyse-Tools von Drittanbietern verwendet.',
       'privacy.c5': '5. Dienste von Drittanbietern',
       'privacy.c5f': 'Formspree (Kontaktformular)',
-      'privacy.c5ft': 'Für die Verarbeitung von Kontaktanfragen über das Kontaktformular nutze ich den Dienst Formspree (Formspree Inc., USA). Wenn Sie das Kontaktformular absenden, werden die von Ihnen eingegebenen Daten an die Server von Formspree übermittelt und von dort an meine E-Mail-Adresse weitergeleitet. Formspree verarbeitet diese Daten ausschließlich zur Zustellung Ihrer Nachricht. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b und lit. f DSGVO.',
+      'privacy.c5ft': 'Für die Verarbeitung von Kontaktanfragen über das Kontaktformular nutze ich den Dienst Formspree (Formspree Inc., USA). Wenn Sie das Kontaktformular absenden, werden die von Ihnen eingegebenen Daten an die Server von Formspree übermittelt und von dort an meine E-Mail-Adresse weitergeleitet. Formspree verarbeitet diese Daten ausschließlich zur Zustellung Ihrer Nachricht. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b und lit. f DSGVO. Da Formspree seinen Sitz in den USA hat, erfolgt eine Übermittlung in ein Drittland. Rechtsgrundlage dafür ist das EU-US Data Privacy Framework (soweit Formspree zertifiziert ist) bzw. die von der EU-Kommission genehmigten Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).',
       'privacy.c5fm': 'Weitere Informationen: ',
       'privacy.c5fonts': 'Schriftarten',
       'privacy.c5fontst': 'Diese Website verwendet ausschließlich systemeigene Schriftarten Ihres Geräts. Es werden keine Schriftarten von Google Fonts oder anderen Drittanbietern nachgeladen.',
@@ -253,8 +252,7 @@
       'priv.mig.text': 'Set up your new device and move your data over from the old one.',
       'priv.mig.price': 'from €79',
       'priv.note1': 'Initial consultation free of charge',
-      'priv.note2': 'Free travel within the Steyr area (approx. 30 km), beyond that by arrangement',
-      'priv.note3': 'Outside this radius you’ll receive a quote after a short chat',
+      'priv.note2': 'Free travel within the Steyr area (approx. 30 km); beyond that by arrangement – you will receive a quote after a short clarification',
       'priv.ust': 'All prices include 20% VAT',
       'priv.cta': 'Request a free consultation',
 
@@ -314,17 +312,17 @@
       'impress.law': 'Applicable legal regulations',
       'impress.lawText': 'Trade Regulation Act (Gewerbeordnung):',
       'impress.dispute': 'Dispute resolution',
-      'impress.disputeText': 'The European Commission provides a platform for online dispute resolution (ODR):',
-      'impress.disputeEnd': 'We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.',
+      'impress.disputeText': 'Please send complaints to matthias@langwieser-its.at.',
+      'impress.disputeEnd': 'I am not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.',
       'impress.liability': 'Liability for content',
       'impress.liabilityText': 'The contents of this website were created with the greatest possible care. However, no guarantee can be given for the correctness, completeness, and topicality of the contents.',
 
       'privacy.title': 'Privacy policy',
       'privacy.updated': 'Last updated: October 2026',
-      'privacy.intro': 'The protection of your personal data is of particular concern to me. I therefore process your data exclusively on the basis of legal provisions (GDPR, TKG 2003).',
+      'privacy.intro': 'The protection of your personal data is of particular concern to me. I therefore process your data exclusively on the basis of legal provisions (GDPR, TKG 2021).',
       'privacy.c1': '1. Data controller',
       'privacy.c2': '2. Data collection and processing',
-      'privacy.c2t1': 'When you visit my website, the following data is automatically collected (host server logs):',
+      'privacy.c2t1': 'When you visit my website, the following data is automatically collected (server logs at the hosting provider IONOS SE, Germany):',
       'privacy.c2i1': 'IP address of the requesting computer',
       'privacy.c2i2': 'Date and time of access',
       'privacy.c2i3': 'Name and URL of the retrieved file',
@@ -344,7 +342,7 @@
       'privacy.c4t2': 'No tracking cookies or third-party analytics tools are used.',
       'privacy.c5': '5. Third-party services',
       'privacy.c5f': 'Formspree (contact form)',
-      'privacy.c5ft': 'For processing contact requests I use Formspree (Formspree Inc., USA). When you submit the form, your data is transmitted to Formspree’s servers and forwarded to my email address. Formspree processes this data solely to deliver your message. Use is based on Art. 6(1)(b) and (f) GDPR.',
+      'privacy.c5ft': 'For processing contact requests I use Formspree (Formspree Inc., USA). When you submit the form, your data is transmitted to Formspree’s servers and forwarded to my email address. Formspree processes this data solely to deliver your message. Use is based on Art. 6(1)(b) and (f) GDPR. Because Formspree is based in the USA, this involves a transfer to a third country. The legal basis is the EU-US Data Privacy Framework (where Formspree is certified) and/or the Standard Contractual Clauses approved by the European Commission (Art. 46(2)(c) GDPR).',
       'privacy.c5fm': 'More information: ',
       'privacy.c5fonts': 'Fonts',
       'privacy.c5fontst': 'This website uses only system fonts on your device. No fonts are loaded from Google Fonts or other third parties.',
@@ -411,7 +409,7 @@
       }
       return stored;
     }
-    return navigator.language && navigator.language.toLowerCase().indexOf('de') === 0 ? 'de' : 'de';
+    return navigator.language && navigator.language.toLowerCase().indexOf('de') === 0 ? 'de' : 'en';
   }
 
   function applyI18n(lang) {
