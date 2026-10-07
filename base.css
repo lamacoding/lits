@@ -1,4 +1,4 @@
-/* base.css */
+/* base.css – reset, a11y, reduced-motion */
 *,
 *::before,
 *::after {
@@ -20,8 +20,8 @@ html {
 
 body {
   min-height: 100dvh;
-  line-height: 1.6;
-  font-family: var(--font-body, sans-serif);
+  line-height: 1.65;
+  font-family: var(--font-body);
   font-size: var(--text-base);
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -36,10 +36,12 @@ svg {
   max-width: 100%;
   height: auto;
 }
+
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
 }
+
 input,
 button,
 textarea,
@@ -48,25 +50,20 @@ select {
   color: inherit;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
-  line-height: 1.15;
+  line-height: 1.2;
+  font-weight: 650;
+  color: var(--color-heading);
 }
-p,
-li,
-figcaption {
+
+p, li, figcaption {
   text-wrap: pretty;
-  max-width: 72ch;
 }
 
 ::selection {
-  background: oklch(from var(--color-primary) l c h / 0.25);
-  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-primary) 28%, transparent);
+  color: var(--color-heading);
 }
 
 :focus-visible {
@@ -91,23 +88,14 @@ button {
   background: none;
   border: none;
 }
-table {
-  border-collapse: collapse;
-  width: 100%;
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 3px;
 }
 
-a,
-button,
-[role='button'],
-[role='link'],
-input,
-textarea,
-select {
-  transition:
-    color var(--transition-interactive),
-    background var(--transition-interactive),
-    border-color var(--transition-interactive),
-    box-shadow var(--transition-interactive);
+a:hover {
+  color: var(--color-primary-hover);
 }
 
 .sr-only {
@@ -120,4 +108,22 @@ select {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  color: #fff;
 }
